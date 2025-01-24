@@ -9,18 +9,20 @@ public class WindowController : MonoBehaviour
     private Vector3 _offset;
     private RectTransform _rectTransform;
     private WindowManager _windowManager;
-    private MinigameManager _gameManager;
     private BoxCollider2D _boxCollider;
     private Canvas _canvas;
 
     [SerializeField]
     private RectTransform _rectTransformBar;
 
+    [SerializeField]
+    private MinigameManager _gameManager;
+
     private float _barHeightHalfSize;
     private void Awake()
     {
         _windowManager = GetComponentInParent<WindowManager>();
-        _gameManager = GetComponentInParent<MinigameManager>();
+        if(!_gameManager) _gameManager = GetComponentInParent<MinigameManager>();
         _canvas = GetComponent<Canvas>();
         _rectTransform = GetComponent<RectTransform>();
     }
