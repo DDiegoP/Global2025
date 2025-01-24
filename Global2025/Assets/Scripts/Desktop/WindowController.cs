@@ -9,6 +9,7 @@ public class WindowController : MonoBehaviour
     private Vector3 _offset;
     private RectTransform _rectTransform;
     private WindowManager _windowManager;
+    private MinigameManager _gameManager;
     private BoxCollider2D _boxCollider;
     private Canvas _canvas;
 
@@ -19,6 +20,7 @@ public class WindowController : MonoBehaviour
     private void Awake()
     {
         _windowManager = GetComponentInParent<WindowManager>();
+        _gameManager = GetComponentInParent<MinigameManager>();
         _canvas = GetComponent<Canvas>();
         _rectTransform = GetComponent<RectTransform>();
     }
@@ -81,9 +83,10 @@ public class WindowController : MonoBehaviour
         _windowManager.RemoveController(this);
     }
 
-    public void SetOrder(int order)
+    public void SetOrder(int order, bool hasFocus)
     {
         _canvas.sortingOrder = order;
         _rectTransform.position = new Vector3(_rectTransform.position.x, _rectTransform.position.y, -order);
+        _gameManager.enabled = hasFocus;
     }
 }

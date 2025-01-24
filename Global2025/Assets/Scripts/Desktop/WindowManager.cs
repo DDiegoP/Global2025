@@ -6,13 +6,11 @@ public class WindowManager : MonoBehaviour
 {
     private List<WindowController> _controllers = new List<WindowController>();
 
-    private int _windowCount = 1;
 
     public void AddController(WindowController controller)
     {
         _controllers.Add(controller);
-        controller.SetOrder(_windowCount);
-        _windowCount++;
+        updateOrder();
     }
 
     public void UpdateController(WindowController controller)
@@ -25,7 +23,6 @@ public class WindowManager : MonoBehaviour
     public void RemoveController(WindowController controller)
     {
         _controllers.Remove(controller);
-        _windowCount--;
         updateOrder();
     }
 
@@ -34,7 +31,7 @@ public class WindowManager : MonoBehaviour
         int i = 1;
         foreach (WindowController controller in _controllers)
         {
-            controller.SetOrder(i);
+            controller.SetOrder(i, i == _controllers.Count);
             ++i;
         }
     }
