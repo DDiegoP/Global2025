@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class WindowController : MonoBehaviour
@@ -14,18 +15,18 @@ public class WindowController : MonoBehaviour
     [SerializeField]
     private RectTransform _rectTransformBar;
 
-    private Vector2 _barHalfSize;
+    private float _barHeightHalfSize;
     private void Awake()
     {
         _windowManager = GetComponentInParent<WindowManager>();
         _canvas = GetComponent<Canvas>();
+        _rectTransform = GetComponent<RectTransform>();
     }
     private void Start()
     {
         _isDragging = false;
-        _rectTransform = GetComponent<RectTransform>();
         _boxCollider = GetComponent<BoxCollider2D>();
-        _barHalfSize = new Vector2(_rectTransformBar.sizeDelta.x / 2, _rectTransformBar.sizeDelta.y / 2);
+        _barHeightHalfSize = _rectTransformBar.sizeDelta.y / 2;
     }
 
 
@@ -36,37 +37,36 @@ public class WindowController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && CheckMouseOnWindow())
+        if (Mouse.current.leftButton.wasPressedThisFrame && CheckMouseOnWindow())
         {
             Debug.Log("He colisionado con la ventana");
             if (CheckMouseOnBar())
             {
                 Debug.Log("He colisionado con barra");
                 _isDragging = true;
-                _offset = _rectTransform.position - Input.mousePosition;
+                _offset = _rectTransform.position - (Vector3)Mouse.current.position.ReadValue();
             }
             _windowManager.UpdateController(this);
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
             _isDragging = false;
         }
         if (_isDragging)
         {
-            _rectTransform.position = Input.mousePosition + _offset;
+            _rectTransform.position = (Vector3)Mouse.current.position.ReadValue() + _offset;
         }
     }
 
     private bool CheckMouseOnWindow()
     {
-        RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, Camera.main.transform.forward);
+        RaycastHit2D hit = Physics2D.Raycast(Mouse.current.position.ReadValue(), Camera.main.transform.forward);
         return hit.collider == _boxCollider;
     }
 
     private bool CheckMouseOnBar()
     {
-        return Input.mousePosition.x >= _rectTransformBar.position.x - _barHalfSize.x && Input.mousePosition.x < _rectTransformBar.position.x + _barHalfSize.x
-                && Input.mousePosition.y >= _rectTransformBar.position.y - _barHalfSize.y && Input.mousePosition.y < _rectTransformBar.position.y + _barHalfSize.y;
+        return Mouse.current.position.ReadValue().y >= _rectTransformBar.position.y - _barHeightHalfSize;
     }
 
 
@@ -84,5 +84,6 @@ public class WindowController : MonoBehaviour
     public void SetOrder(int order)
     {
         _canvas.sortingOrder = order;
+        _rectTransform.position = new Vector3(_rectTransform.position.x, _rectTransform.position.y, -order);
     }
 }

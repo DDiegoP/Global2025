@@ -26,6 +26,7 @@ public class WindowManager : MonoBehaviour
     {
         _controllers.Remove(controller);
         _windowCount--;
+        updateOrder();
     }
 
     private void updateOrder()
