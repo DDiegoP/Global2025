@@ -9,13 +9,23 @@ public class CleanComponent : GameComponent
     [SerializeField]
     Texture2D copyTexture;
 
+    private int totalClean = 237635;
+
+
     private RectTransform _rectTransform;
+
+    private Transform _transform;
     void Awake()
     {
         base.Awake();
         ResetTexture();
     }
 
+    void Start()
+    {
+        _transform = GetComponent<Transform>();
+        _rectTransform = GetComponent<RectTransform>();
+    }
     public void CleanObject()
     {
         Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Mouse.current.position.x.magnitude, Mouse.current.position.y.magnitude, 0)), out RaycastHit hit);
@@ -26,7 +36,6 @@ public class CleanComponent : GameComponent
 
         if (dirtMaskTexture.GetPixel(pixelX, pixelY) != Color.black)
         {
-            Debug.Log("te pinto negro");
             dirtMaskTexture.SetPixel(pixelX, pixelY, Color.black);
         }
     }
@@ -57,11 +66,23 @@ public class CleanComponent : GameComponent
         }
         dirtMaskTexture.Apply();
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int checkDirtyNess()
     {
-        _rectTransform = GetComponent<RectTransform>();
+        int clean = 0;
+        for (int i = 0; i < dirtMaskTexture.width; ++i)
+        {
+            for (int j = 0; j < dirtMaskTexture.height; ++j)
+            {
+                if (dirtMaskTexture.GetPixel(i, j) == Color.black) clean++;
+            }
+
+        }
+        clean *= 100;
+        clean /= totalClean;
+        
+        return clean;
     }
 
+   
+    
 }
