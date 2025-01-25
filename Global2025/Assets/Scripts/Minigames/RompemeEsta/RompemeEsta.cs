@@ -1,7 +1,7 @@
 using FMODUnity;
 using UnityEngine;
 
-public class RompemeEstaComponent : MonoBehaviour
+public class RompemeEstaComponent : GameComponent
 {
     [SerializeField]
     private GameObject _typeABubble;
@@ -22,7 +22,7 @@ public class RompemeEstaComponent : MonoBehaviour
 
     private void createBubble()
     {
-        int type = Random.Range(0, 2);
+        int type = Random.Range(0, 10);
 
         // Calcular la posición de la burbuja
         Vector2 randomPos = new Vector2(Random.Range(-_canvas.sizeDelta.x / 2, _canvas.sizeDelta.x / 2), 
@@ -30,13 +30,14 @@ public class RompemeEstaComponent : MonoBehaviour
 
         // Intanciar segun el tipo
         GameObject newBubble;
-        if (type % 2 == 0) newBubble = GameObject.Instantiate(_typeABubble, gameObject.transform, false);
+        if (type < 7) newBubble = Instantiate(_typeABubble, gameObject.transform, false);
         else newBubble = GameObject.Instantiate(_typeBBubble, gameObject.transform, false);
-
-        newBubble.transform.position = randomPos;
-
+        BubbleComponent bubbleComponent = newBubble.GetComponent<BubbleComponent>();
+        bubbleComponent.SetStartPosition(randomPos);
+        bubbleComponent.SetMinigameManager(_manager);
+            
         // Reproducir sonido
-        _emitter.Play();
+        //_emitter.Play();
     }
 
 
@@ -45,7 +46,7 @@ public class RompemeEstaComponent : MonoBehaviour
     {
         _canInstantiate = true;
         _canvas = GetComponent<RectTransform>();
-        _emitter = GetComponent<StudioEventEmitter>();
+        //_emitter = GetComponent<StudioEventEmitter>();
     }
 
     // Update is called once per frame

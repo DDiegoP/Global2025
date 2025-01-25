@@ -17,6 +17,6 @@ public abstract class GameComponent : MonoBehaviour
 
     private void OnDestroy()
     {
-        _manager.UnRegisterComponent(this);
+        _manager?.UnRegisterComponent(this);
     }
 }

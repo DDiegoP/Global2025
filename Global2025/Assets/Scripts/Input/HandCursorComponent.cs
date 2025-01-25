@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HandCursorComponent : MonoBehaviour
+public class HandCursorComponent : GameComponent
 {
     private BubbleComponent _currentBubble = null;
 
@@ -12,16 +12,17 @@ public class HandCursorComponent : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _currentBubble = null;
+        if(_currentBubble == collision.GetComponent<BubbleComponent>()) _currentBubble = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Input.mousePosition;
+        transform.position = Mouse.current.position.ReadValue();
         if (_currentBubble != null && Mouse.current.leftButton.wasReleasedThisFrame)
         {
             _currentBubble.Pop();
+            _currentBubble = null;
         }
     }
 }

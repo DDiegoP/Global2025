@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5387231380897192133}
   - component: {fileID: 8477045378318972128}
   - component: {fileID: 1393976566507414880}
-  - component: {fileID: 1355866822410678256}
+  - component: {fileID: 1152173596461057918}
+  - component: {fileID: 3262632327636123378}
   m_Layer: 0
   m_Name: BubblePositive
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 42.486874, y: 38.4}
+  m_SizeDelta: {x: 150, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8477045378318972128
 CanvasRenderer:
@@ -76,7 +77,43 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1355866822410678256
+--- !u!58 &1152173596461057918
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4661439131608380979}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 3, y: 2}
+  m_Radius: 41
+--- !u!114 &3262632327636123378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,14 +122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4661439131608380979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfb86eec8bebc1488d2f145ce0b69af, type: 3}
+  m_Script: {fileID: 11500000, guid: 97c1dd021b08b0c4daf20905e00192be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
-  floatSpeed: 1.5
-  sideSpeed: 0.5
-  sideRange: 0.5
-  lifetime: 5
-  shrinkDuration: 2
-  minScaleFactor: 0.5
-  maxScaleFactor: 1
+  negativeBubble: 0
+  _offset: 5
