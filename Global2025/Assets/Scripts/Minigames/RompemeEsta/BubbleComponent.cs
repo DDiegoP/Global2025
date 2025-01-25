@@ -7,6 +7,13 @@ public class BubbleComponent : GameComponent
     private ScoreComponent _scoreComponent;
     private StudioEventEmitter _emitter;
 
+    [SerializeField]
+    private float _offset = 5;
+
+    private Vector3 _nextPosition;
+    private Vector3 _initialPosition;
+    private Vector3 _direction;
+
     private void Pop()
     {
         int sign = negativeBubble ? -1 : 1;
@@ -22,9 +29,27 @@ public class BubbleComponent : GameComponent
             Pop();
     }
 
+    private void calculateNextPosition()
+    {
+        _nextPosition = new Vector3(Random.Range(_initialPosition.x - _offset, _initialPosition.x + _offset),
+            Random.Range(_initialPosition.y - _offset, _initialPosition.y + _offset), 0);
+
+        _direction = (_nextPosition - transform.position) / 50.0f;
+    }
+
     private void Start()
     {
         _scoreComponent = GetComponentInParent<ScoreComponent>();
         _emitter = GetComponent<StudioEventEmitter>();
+        calculateNextPosition();
+    }
+
+    private void Update()
+    {
+        if (transform.position == _nextPosition)
+        {
+            calculateNextPosition();
+        }
+        transform.position += _direction;
     }
 }
