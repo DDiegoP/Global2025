@@ -1,11 +1,11 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinigameManager : MonoBehaviour
 {
     private List<GameComponent> _components = new List<GameComponent>();
- 
     public void RegisterComponent(GameComponent gameComponent)
     {
         _components.Add(gameComponent);
@@ -31,5 +31,4 @@ public class MinigameManager : MonoBehaviour
             component.enabled = true;
         }
     }
-
 }

@@ -119,16 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &73561869 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5523670733959340821, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-  m_PrefabInstance: {fileID: 482048999}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &73561870 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8971063053979061157, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-  m_PrefabInstance: {fileID: 482048999}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &166768173
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,9 +501,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
+    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5523670733959340821, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: m_Name
       value: Ventana Balloons
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523670733959340821, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8971063053979061157, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: m_Pivot.x
@@ -600,6 +598,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+--- !u!224 &482049000 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8971063053979061157, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+  m_PrefabInstance: {fileID: 482048999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &796724993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1540,7 @@ RectTransform:
   - {fileID: 288529189}
   - {fileID: 297777357}
   - {fileID: 3899220448218821665}
-  - {fileID: 73561870}
+  - {fileID: 482049000}
   - {fileID: 1306297474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1840,7 +1843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b2fa1e3de3d4f4a9815860cc9d2dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _window: {fileID: 73561869}
+  _window: {fileID: 0}
 --- !u!1 &1408302548551916674 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
