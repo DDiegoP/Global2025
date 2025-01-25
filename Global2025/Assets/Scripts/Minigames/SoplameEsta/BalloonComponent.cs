@@ -9,11 +9,14 @@ public class BalloonComponent : GameComponent
     private bool _blowing = false;
 
     [SerializeField]
-    private float maxScale = 4;
+    private float _maxScale = 4;
 
     private void Pop()
     {
-
+        _blowing = false;
+        // Animacion de explosion?
+         
+        // Sonido de explosion
     }
 
     private void ApplyScore()
@@ -38,9 +41,10 @@ public class BalloonComponent : GameComponent
             // Aumentamos el aire del globo (y con ello la escala)
             _air += 0.05;
             _scale += _air;
-            if (_air)
+            if (_scale > _maxScale) Pop();
             // Si deja de soplar ->
-            
+            // if (Input.notBlowing())
+            // blowing = false; ApplyScore();
         }
     }
 }
