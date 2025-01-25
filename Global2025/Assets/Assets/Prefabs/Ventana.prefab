@@ -65,7 +65,7 @@ RectTransform:
   m_GameObject: {fileID: 3118799998235600771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.52, y: 0.52, z: 0.52}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 585080404505482379}
@@ -239,7 +239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 820, y: 488}
+  m_AnchoredPosition: {x: 831, y: 489}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7199758729463627312
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6166169276401069120}
         m_TargetAssemblyTypeName: WindowController, Assembly-CSharp
         m_MethodName: CloseWindow
         m_Mode: 1
@@ -726,6 +726,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2713409205908862041, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713409205908862041, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 603168656307368038}
     - target: {fileID: 4076324620001125697, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
       propertyPath: m_Name
       value: Minigame 1
@@ -734,6 +742,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4737669945039670818, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737669945039670818, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 603168656307368038}
     - target: {fileID: 5582290417151046003, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -742,6 +758,14 @@ PrefabInstance:
       propertyPath: _rectTransformBar
       value: 
       objectReference: {fileID: 1971871919672761207}
+    - target: {fileID: 6149628756013074707, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149628756013074707, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 603168656307368038}
     - target: {fileID: 6464375764726554093, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -754,6 +778,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7217146095659224770, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217146095659224770, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 603168656307368038}
     - target: {fileID: 7230057938492409069, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -770,8 +802,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6107080390632728729, guid: a3224bc994eb66f49af42dda18a50dfe, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

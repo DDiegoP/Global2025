@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class MovingAnimator: MonoBehaviour
 {
-    [SerializeField] private float _posIzq;
-    [SerializeField] private float _posDer;
+     private float _posIzq;
+    private float _posDer;
+    [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private float _speed;
 
     private int _dir = 1;
@@ -15,6 +16,11 @@ public class MovingAnimator: MonoBehaviour
     {
         _rb = this.GetComponent<Rigidbody2D>();
         _transform = this.transform;
+        _posDer = _rectTransform.position.x + _rectTransform.rect.width/2;
+        Debug.Log(_posDer);
+
+        _posIzq = _rectTransform.position.x - _rectTransform.rect.width / 2;
+        Debug.Log(_posIzq);
     }
 
     private void Update()
