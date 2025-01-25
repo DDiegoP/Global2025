@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class MovingAnimator: MonoBehaviour
+public class MovingAnimator: GameComponent
 {
      private float _posIzq;
     private float _posDer;
@@ -12,20 +12,22 @@ public class MovingAnimator: MonoBehaviour
     private Rigidbody2D _rb;
     private Transform _transform;
 
+    private void Awake()
+    {
+        base.Awake();
+    }
+
     private void Start()
     {
         _rb = this.GetComponent<Rigidbody2D>();
         _transform = this.transform;
-        _posDer = _rectTransform.position.x + _rectTransform.rect.width/2;
-        Debug.Log(_posDer);
-
-        _posIzq = _rectTransform.position.x - _rectTransform.rect.width / 2;
-        Debug.Log(_posIzq);
     }
 
     private void Update()
     {
         _rb.linearVelocity = new Vector2(_dir * _speed, 0);
+        _posDer = _rectTransform.position.x + _rectTransform.rect.width / 2;
+        _posIzq = _rectTransform.position.x - _rectTransform.rect.width / 2;
 
         if ((_dir > 0 && _transform.position.x >= _posDer) || (_dir < 0 && _transform.position.x <= _posIzq))
         {
