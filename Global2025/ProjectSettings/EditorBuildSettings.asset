@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Input/David_pc.unity
-    guid: bb9ec5431fa4d2547a8035a2b126d20c
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
-    path: Assets/Scenes/Input/David_android.unity
-    guid: 74f31936a6ea996499234641fdc3720b
+    path: Assets/Scenes/UI/Desktop Roi.unity
+    guid: a8ae5ae6e2edfff458a6b6283645978a
   - enabled: 1
-    path: Assets/Scenes/Input/Mirror/basic_server.unity
-    guid: 668e9f8157510a0498c9906138be6df4
+    path: Assets/Scenes/UI/Desktop 1.unity
+    guid: 2886c53b8022948419e07e62f72b99c9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

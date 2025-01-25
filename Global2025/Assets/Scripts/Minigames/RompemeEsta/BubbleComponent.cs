@@ -14,19 +14,13 @@ public class BubbleComponent : GameComponent
     private Vector3 _initialPosition;
     private Vector3 _direction;
 
-    private void Pop()
+    public void Pop()
     {
         int sign = negativeBubble ? -1 : 1;
         // Llamar al score component
         _scoreComponent.changeScore(sign * 5);
         // Sonido de explotar
         _emitter.Play();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<HandCursorComponent>() != null)
-            Pop();
     }
 
     private void calculateNextPosition()

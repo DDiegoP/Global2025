@@ -1,9 +1,11 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TimerComponent : MonoBehaviour {
+public class TimerComponent : GameComponent {
     [SerializeField]
     private double _startTime = 30.0;
 
@@ -18,8 +20,8 @@ public class TimerComponent : MonoBehaviour {
 
     private bool _finished;
 
-    private bool _refreshText;
-    private Text _text;
+    [SerializeField]
+    private TextMeshProUGUI _text;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,8 +30,6 @@ public class TimerComponent : MonoBehaviour {
         _finished = false;
         _decreasing = (_startTime > _finishTime);
         _elapsedTime = _startTime;
-        _text = gameObject.GetComponent<Text>();
-        _refreshText = _text != null;
     }
 
     // Update is called once per frame
@@ -40,10 +40,7 @@ public class TimerComponent : MonoBehaviour {
                 _elapsedTime -= Time.deltaTime;
             else _elapsedTime += Time.deltaTime;
 
-            if (_refreshText)
-            {
-                _text.text = ((int) _elapsedTime) +  "s";
-            }
+            if (_text != null) _text.text = "Text: " + Math.Round(_elapsedTime,2);
 
             if ((_decreasing && _elapsedTime <= _finishTime) || (!_decreasing && _elapsedTime >= _finishTime))
             {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MovingAnimator: GameComponent
 {
-     private float _posIzq;
+    private float _posIzq;
     private float _posDer;
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private float _speed;
