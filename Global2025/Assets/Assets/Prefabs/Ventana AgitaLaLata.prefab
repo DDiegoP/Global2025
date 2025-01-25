@@ -517,7 +517,6 @@ GameObject:
   - component: {fileID: 2737012099225382885}
   - component: {fileID: 2658947887070326487}
   - component: {fileID: 435310562516199109}
-  - component: {fileID: 7091398227889050385}
   m_Layer: 3
   m_Name: Ventana AgitaLaLata
   m_TagString: Untagged
@@ -680,25 +679,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1005, y: 618}
   m_EdgeRadius: 0
---- !u!114 &7091398227889050385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8670708949039059716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc63e7bde635915489287c30d7726b8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationObj: {fileID: 8855888597519403248}
-  spawnPos: {fileID: 7426506705439570851}
-  bubble: {fileID: 8120138657893724922, guid: dd06030e3a562244eac63b1fa7bb7213, type: 3}
-  intensityFactor: 0.3
-  timeCount: 0
-  totalTime: 2
-  intensityIncrease: 0.002
 --- !u!1 &9164245767285238093
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,15 +814,5 @@ PrefabInstance:
 --- !u!224 &4181088091635898850 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6091614794911022222, guid: 40b85e92c6bfd234c8effd1ba88e3d6e, type: 3}
-  m_PrefabInstance: {fileID: 7966856840656823660}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7426506705439570851 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 693473624215363279, guid: 40b85e92c6bfd234c8effd1ba88e3d6e, type: 3}
-  m_PrefabInstance: {fileID: 7966856840656823660}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8855888597519403248 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1470875890504052124, guid: 40b85e92c6bfd234c8effd1ba88e3d6e, type: 3}
   m_PrefabInstance: {fileID: 7966856840656823660}
   m_PrefabAsset: {fileID: 0}

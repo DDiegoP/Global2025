@@ -5,9 +5,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 
-public class AgitameEstaComponent : MonoBehaviour
+public class AgitameEstaComponent : GameComponent
 {
     [SerializeField]
     private GameObject rotationObj;
@@ -15,6 +16,7 @@ public class AgitameEstaComponent : MonoBehaviour
     private GameObject spawnPos;
     [SerializeField]
     private GameObject bubble;
+    private ScoreComponent scoreComponent;
 
     //moviendo la botella
     private bool isMoving;
@@ -34,6 +36,10 @@ public class AgitameEstaComponent : MonoBehaviour
 
     //generate bubbles
     private RectTransform spawnPosRect;
+    [SerializeField] 
+    private float bubbleAnimationTime;
+    private float currentAnimationTime;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +47,7 @@ public class AgitameEstaComponent : MonoBehaviour
         isMoving = true;
         shoot = false;
         spawnPosRect = spawnPos.GetComponent<RectTransform>();
+        scoreComponent = this.GetComponent<ScoreComponent>();
         timeCount = 0;
         totalTime = 2;
         intensityFactor = 0.3f;
@@ -52,6 +59,14 @@ public class AgitameEstaComponent : MonoBehaviour
 
     //funcion callback timer finish time agitando
     //funcion callback timer finish time representacion puntuacion
+    public void startShooting()
+    {
+        isMoving = false;
+        shoot = true;
+        currentAnimationTime = 0;
+        
+    }
+   
     void Shoot()
     {
         //little offsets
@@ -64,9 +79,19 @@ public class AgitameEstaComponent : MonoBehaviour
         GameObject bubbleInstance = GameObject.Instantiate(bubble, spawnPosRect.position + posOffset, Quaternion.identity, this.GetComponent<RectTransform>().transform);
 
         //alcance depende de lo que haya agitado el jugador (+offsets)
-        Vector3 vel = new Vector3(200, 150, 0) * intensityFactor;
+        Vector3 vel = new Vector3(200*intensityFactor, 150, 0);
         bubbleInstance.transform.localScale += scaleOffset;
         bubbleInstance.GetComponent<Rigidbody2D>().linearVelocity = vel + velOffset;
+        bubbleInstance.GetComponent<BubbleDrinkComponent>().SetMinigameManager(_manager);
+
+        //check animation time
+        currentAnimationTime += Time.deltaTime;
+        if(currentAnimationTime > bubbleAnimationTime)
+        {
+            shoot = false;
+            scoreComponent.changeScore(Mathf.Floor((intensityFactor-0.3f)* 100));
+            //Call end function end game bla
+        }
 
     }
     void RotateArm() //parameter: input cuanto estamos agitando 
@@ -90,7 +115,7 @@ public class AgitameEstaComponent : MonoBehaviour
         if (isMoving)
         {
             RotateArm();
-            if (Mouse.current.leftButton.isPressed)
+            if (Mouse.current.leftButton.wasPressedThisFrame)
             {
                 intensityFactor += intensityIncrease;
             }

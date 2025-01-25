@@ -40,7 +40,7 @@ public class TimerComponent : GameComponent {
                 _elapsedTime -= Time.deltaTime;
             else _elapsedTime += Time.deltaTime;
 
-            if (_text != null) _text.text = "Text: " + Math.Round(_elapsedTime,2);
+            if (_text != null) _text.text = "Time: " + Math.Round(_elapsedTime,2);
 
             if ((_decreasing && _elapsedTime <= _finishTime) || (!_decreasing && _elapsedTime >= _finishTime))
             {

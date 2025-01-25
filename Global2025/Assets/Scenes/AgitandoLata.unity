@@ -401,6 +401,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -63
       objectReference: {fileID: 0}
+    - target: {fileID: 6275722454815123928, guid: 62cb498852985534fb67452ebddd9dcf, type: 3}
+      propertyPath: bubbleAnimationTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6974104810943645196, guid: 62cb498852985534fb67452ebddd9dcf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
