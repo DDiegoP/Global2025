@@ -25,7 +25,7 @@ public class BalloonComponent : GameComponent
 
     private void ApplyScore()
     {
-        _scoreComponent.changeScore((int) _scale);
+        _scoreComponent.changeScore((int) ((_scale - 1) * 10));
     }
 
     private void Start()

@@ -14,6 +14,12 @@ public class FoamComponent : GameComponent
     private ScoreComponent _scoreComponent;
     private Animator _animator;
 
+    private double _animationTimer = 0;
+
+    private bool _increasing = true;
+
+    private bool _rotatingRight = false;
+
     private void changeState()
     {
         _elapsedTime = 0.0;
@@ -48,5 +54,18 @@ public class FoamComponent : GameComponent
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
+
+        // Animacion: rotar y aumentar decrecer scale
+
+        transform.Rotate(0, _rotatingRight ? -1 : 1, 0);
+        transform.localScale += _increasing ? new Vector3(0.1f, 0.1f, 0.1f) : new Vector3(-0.1f, -0.1f, -0.1f);
+
+        _animationTimer += Time.deltaTime;
+        if (_animationTimer > 0.5)
+        {
+            _animationTimer = 0;
+            _increasing = (!_increasing);
+            _rotatingRight = (!_rotatingRight);
+        }
     }
 }
