@@ -11,6 +11,11 @@ public class MinigameManager : MonoBehaviour
         _components.Add(gameComponent);
     }
 
+    public void UnRegisterComponent(GameComponent gameComponent)
+    {
+        _components.Remove(gameComponent);
+    }
+
     private void OnDisable()
     {
         foreach (GameComponent component in _components)

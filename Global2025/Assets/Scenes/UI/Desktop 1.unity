@@ -3303,9 +3303,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
+    - target: {fileID: 1578218655843024104, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1909538330509782051, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3118799998235600771, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: m_Name
@@ -3313,6 +3317,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3118799998235600771, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387850499904266324, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3783622934308529775, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
@@ -3419,13 +3427,17 @@ PrefabInstance:
       propertyPath: _manager
       value: 
       objectReference: {fileID: 1250149252}
+    - target: {fileID: 4837483008788791028, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 49.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4853813872350322176, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: m_OverrideSorting
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5176432314286724071, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5419990363549828889, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: _manager
@@ -3439,13 +3451,17 @@ PrefabInstance:
       propertyPath: _rectTransform
       value: 
       objectReference: {fileID: 1250149251}
+    - target: {fileID: 8371174836819644587, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8811299694364836040, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: _manager
       value: 
       objectReference: {fileID: 1250149252}
     - target: {fileID: 9191265484355843229, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9183013883328914546, guid: 8bf55c1dd2f3fee47a936442b46695c3, type: 3}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BubbleAnimation : MonoBehaviour
+public class BubbleAnimation : GameComponent
 {
     [SerializeField]
     public float floatSpeed = 1.5f;
@@ -20,6 +20,11 @@ public class BubbleAnimation : MonoBehaviour
     private float minScaleFactor = 0.5f;  // El factor mínimo de la escala
     [SerializeField]
     private float maxScaleFactor = 1.0f;  // El factor máximo de la escala (por defecto 1)
+
+    private void Awake()
+    {
+        base.Awake();
+    }
 
     void Start()
     {

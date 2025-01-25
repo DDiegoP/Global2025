@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class InstanciateObject : MonoBehaviour
+public class InstanciateObject : GameComponent
 {
 
     private float elapsedTime = 0f;
-    private float instanceTime = 0.5f;
+    private float instanceTime = 0.25f;
 
     [SerializeField]
     private GameObject m_Prefab;
@@ -12,13 +12,20 @@ public class InstanciateObject : MonoBehaviour
     [SerializeField]
     private Transform intanciatePoint;
 
+    private void Awake()
+    {
+        base.Awake();
+    }
+
     void Update()
     {
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime >= instanceTime)
         {
-            Instantiate(m_Prefab, intanciatePoint.position, Quaternion.identity);
+            GameObject obj = Instantiate(m_Prefab, intanciatePoint.position, Quaternion.identity);
+            obj.transform.SetParent(intanciatePoint);
+            obj.GetComponent<BubbleAnimation>().SetMinigameManager(_manager);
             elapsedTime = 0;
         }
     }
