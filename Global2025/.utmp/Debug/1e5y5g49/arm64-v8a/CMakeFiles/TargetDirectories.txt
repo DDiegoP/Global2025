@@ -1,0 +1,5 @@
+C:/Universidad/4-UCM-DdV/Global2025/Global2025/Global2025/.utmp/Debug/1e5y5g49/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Universidad/4-UCM-DdV/Global2025/Global2025/Global2025/.utmp/Debug/1e5y5g49/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Universidad/4-UCM-DdV/Global2025/Global2025/Global2025/.utmp/Debug/1e5y5g49/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Universidad/4-UCM-DdV/Global2025/Global2025/Global2025/.utmp/Debug/1e5y5g49/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Universidad/4-UCM-DdV/Global2025/Global2025/Global2025/.utmp/Debug/1e5y5g49/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
