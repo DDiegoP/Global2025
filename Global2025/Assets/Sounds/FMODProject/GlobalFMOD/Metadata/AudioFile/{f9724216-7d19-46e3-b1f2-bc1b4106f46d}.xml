@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f9724216-7d19-46e3-b1f2-bc1b4106f46d}">
+		<property name="assetPath">
+			<value>RoGuitarra.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>19.939166666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80121f4d-be0e-41e7-b315-8e08314aee5d}</destination>
+		</relationship>
+	</object>
+</objects>
