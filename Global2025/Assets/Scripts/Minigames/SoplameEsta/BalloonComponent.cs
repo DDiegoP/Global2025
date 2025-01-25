@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class BalloonComponent : GameComponent
@@ -8,26 +9,29 @@ public class BalloonComponent : GameComponent
 
     private bool _blowing = false;
 
+    private ScoreComponent _scoreComponent;
+    private StudioEventEmitter _emitter;
+
+
     [SerializeField]
     private float _maxScale = 4;
 
     private void Pop()
     {
         _blowing = false;
-        // Animacion de explosion?
-         
         // Sonido de explosion
+        _emitter.Play();
     }
 
     private void ApplyScore()
     {
-
+        _scoreComponent.changeScore((int) _scale);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+       _scoreComponent = GetComponentInParent<ScoreComponent>();
+        _emitter = GetComponent<StudioEventEmitter>();
     }
 
     // Update is called once per frame
@@ -41,7 +45,8 @@ public class BalloonComponent : GameComponent
             // Aumentamos el aire del globo (y con ello la escala)
             _air += 0.05;
             _scale += _air;
-            if (_scale > _maxScale) Pop();
+            if (_scale > _maxScale) 
+                Pop();
             // Si deja de soplar ->
             // if (Input.notBlowing())
             // blowing = false; ApplyScore();
