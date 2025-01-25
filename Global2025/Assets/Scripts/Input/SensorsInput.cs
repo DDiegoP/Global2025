@@ -1,18 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-using Gyroscope = UnityEngine.InputSystem.Gyroscope;
+[RequireComponent(typeof(RecordMic))]
 
-public class SensorsInput : MonoBehaviour
-{
+public class SensorsInput : MonoBehaviour {
     [SerializeField]
     RectTransform canvas;
     [SerializeField]
     float max_x_angle = 45f, max_y_angle = 30f;
 
-    Vector3 attitude_reference;
+    RecordMic microphone;
 
-    const float no_gravity = 9.8f;
+    Vector3 attitude_reference;
 
     InputData inputData;
 
@@ -22,6 +21,9 @@ public class SensorsInput : MonoBehaviour
         inputData.mouse_pos = Vector2.zero;
         inputData.mouse_rotation = 0f;
         inputData.clicked = false;
+        inputData.microphone_loudness = 0f;
+        microphone = GetComponent<RecordMic>();
+        microphone.init();
 
         InputSystem.EnableDevice(AttitudeSensor.current);
         InputSystem.EnableDevice(StepCounter.current);
@@ -63,12 +65,16 @@ public class SensorsInput : MonoBehaviour
         Debug.Log(StepCounter.current.stepCounter.value);
         inputData.mouse_pos = GetMousePositionFromSensors(atti);
         inputData.mouse_rotation = GetMouseRotationFromSensors(atti);
+        inputData.microphone_loudness = microphone.GetLoudness();
     }
 
     void SendInputData(InputData input) {
         // TO DO
 
         // VV Temp VV
+
+        //Debug.Log(inputData.microphone_loudness);
+
         RectTransform trans = GetComponent<RectTransform>();
         trans.anchoredPosition = new Vector3((canvas.sizeDelta.x / 2f) * input.mouse_pos.x, (canvas.sizeDelta.y / 2f) * input.mouse_pos.y, transform.position.z);
         trans.rotation = Quaternion.Euler(0, 0, input.mouse_rotation);
