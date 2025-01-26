@@ -18,9 +18,6 @@ namespace QuickStart
         [SerializeField]
         private GameObject _androidCanvas = null;
 
-        [SerializeField]
-        private GameObject _cursor = null;
-
         [SyncVar(hook = nameof(UpdateAttitude))]
         private Vector3 _attitude;
 
@@ -156,17 +153,7 @@ namespace QuickStart
 
         public override void OnStartLocalPlayer()
         {
-            //Camera.main.transform.SetParent(transform);
-            //Camera.main.transform.localPosition = new Vector3(0, 0, 0);
-
-            //string name = "Player" + Random.Range(100, 999);
-            //Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-            //CmdSetupPlayer(_accelerometerMovement);
-
-            // aquí tenemos que poner que se instancie el Canvas guapetón este. a ello voy amigo
-
             _androidCanvas.SetActive(isLocalPlayer);
-            _cursor.SetActive(!isLocalPlayer);
         }
 
         [Command]
