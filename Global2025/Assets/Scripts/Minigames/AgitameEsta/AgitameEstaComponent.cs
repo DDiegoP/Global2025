@@ -116,7 +116,7 @@ public class AgitameEstaComponent : GameComponent
             targetRotation = Quaternion.Euler(offsetRotation + initialRotation);
             timeCount = 0;
         }
-        rotationObj.transform.rotation = Quaternion.Lerp(rotationObj.transform.rotation, targetRotation, (timeCount * intensityFactor) / totalTime);
+        rotationObj.transform.rotation = Quaternion.Lerp(rotationObj.transform.rotation, targetRotation, (timeCount * 2*intensityFactor) / totalTime);
         timeCount = timeCount + Time.deltaTime;
         Debug.Log(timeCount);
     }

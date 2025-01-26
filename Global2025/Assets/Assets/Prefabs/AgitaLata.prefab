@@ -1203,10 +1203,10 @@ MonoBehaviour:
   rotationObj: {fileID: 1470875890504052124}
   spawnPos: {fileID: 693473624215363279}
   bubble: {fileID: 8120138657893724922, guid: dd06030e3a562244eac63b1fa7bb7213, type: 3}
-  intensityFactor: 0.3
+  intensityFactor: 0.1
   timeCount: 0
   totalTime: 2
-  intensityIncrease: 0.1
+  intensityIncrease: 0.3
   bubbleAnimationTime: 3
   _end:
     m_PersistentCalls:
