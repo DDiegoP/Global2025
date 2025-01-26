@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReferenceButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5783614244089666385, guid: c7052242205106e4cb1e3b7982e9cf8e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5980203944435062058, guid: c7052242205106e4cb1e3b7982e9cf8e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

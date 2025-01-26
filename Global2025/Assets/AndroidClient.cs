@@ -108,6 +108,8 @@ namespace QuickStart
             {
                 Debug.LogError("NO TIENES ACELERÓMETRO");
             }
+
+            InputServerManager.Instance.AddClient();
         }
 
         private void OnDestroy()
@@ -116,6 +118,8 @@ namespace QuickStart
             {
                 InputSystem.DisableDevice(AttitudeSensor.current);
             }
+
+            InputServerManager.Instance.RemoveClient();
         }
 
         public override void OnStartLocalPlayer()

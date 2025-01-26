@@ -4,5 +4,7 @@ public struct InputData {
     public Vector2 mouse_pos;
     public float mouse_rotation;
     public bool clicked;
+    public bool justClicked;
+    public bool justReleased;
     public float microphone_loudness;
 }
