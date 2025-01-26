@@ -1,8 +1,8 @@
 using UnityEngine;
 
 public struct InputData {
-    public Vector2 mouse_pos;
-    public float mouse_rotation;
+    public float mouse_pos_x;
+    public float mouse_pos_y;
     public bool clicked;
     public bool justClicked;
     public bool justReleased;

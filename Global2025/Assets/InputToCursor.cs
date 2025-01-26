@@ -16,6 +16,6 @@ public class InputToCursor : MonoBehaviour
     void Update()
     {
         InputData data = InputServerManager.Instance.GetInputData();
-        _tr.anchoredPosition = new Vector2(data.mouse_pos.x * _canvas.sizeDelta.x / 2, data.mouse_pos.y * _canvas.sizeDelta.y / 2);
+        _tr.anchoredPosition = new Vector2(data.mouse_pos_x * _canvas.sizeDelta.x / 2, data.mouse_pos_y * _canvas.sizeDelta.y / 2);
     }
 }

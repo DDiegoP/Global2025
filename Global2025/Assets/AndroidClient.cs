@@ -1,5 +1,6 @@
 using FMOD.Studio;
 using Mirror;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,12 +24,18 @@ namespace QuickStart
         [SyncVar(hook = nameof(UpdateAttitude))]
         private Vector3 _attitude;
 
+        [SyncVar(hook = nameof(UpdateAcceletometer))]
+        private Vector3 _accelerometer;
+
         [SyncVar(hook = nameof(UpdateReference))]
         // no nos importa el valor como tal, solo que cambie
         private bool _updateReferenceToggle = false;
 
         [SyncVar(hook = nameof(UpdateReference2AhoraConElMovil))]
         Vector3 attitude_reference;
+
+        [SyncVar(hook = nameof(UpdateAccelReference2AhoraConElMovil))]
+        Vector3 accelerometer_reference;
 
         [SyncVar(hook = nameof(UpdatePressingScreen))]
         bool _pressingScreen = false;
@@ -45,22 +52,33 @@ namespace QuickStart
         {
             InputServerManager.Instance.UpdateReference(_New);
         }
+        private void UpdateAccelReference2AhoraConElMovil(Vector3 _Old, Vector3 _New)
+        {
+            InputServerManager.Instance.UpdateAccelReference(_New);
+        }
 
         private void UpdateReference(bool _Old, bool _New)
         {
             // Aquí meter los valores con los que queremos tomar la snapshot de la referencia
             InputServerManager.Instance.UpdateReference(attitude_reference);
+            InputServerManager.Instance.UpdateAccelReference(accelerometer_reference);
         }
 
         public void SetAsReference()
         {
             if (AttitudeSensor.current != null) 
                 attitude_reference = AttitudeSensor.current.attitude.value.eulerAngles;
+            if (Accelerometer.current != null) 
+                accelerometer_reference = Accelerometer.current.acceleration.value;
         }
 
         void UpdateAttitude(Vector3 _Old, Vector3 _New)
         {
-            InputServerManager.Instance.CalculateInput(_New);
+            InputServerManager.Instance.CalculateMouseX(_New);
+        }
+
+        void UpdateAcceletometer(Vector3 _Old, Vector3 _New) {
+            InputServerManager.Instance.CalculateMouseY(_New);
         }
 
 
@@ -74,6 +92,10 @@ namespace QuickStart
         private bool HasAttitude()
         {
             return AttitudeSensor.current != null;
+        }
+        private bool HasAccelerometer()
+        {
+            return Accelerometer.current != null;
         }
 
         private void OnEnable()
@@ -100,9 +122,18 @@ namespace QuickStart
         private void Start()
         {
             attitude_reference = _attitude;
+            accelerometer_reference = _accelerometer;
             if (HasAttitude())
             {
                 InputSystem.EnableDevice(AttitudeSensor.current);
+            }
+            else
+            {
+                Debug.LogError("NO TIENES ATTITUDE");
+            }
+            if (HasAccelerometer())
+            {
+                InputSystem.EnableDevice(Accelerometer.current);
             }
             else
             {
@@ -114,11 +145,12 @@ namespace QuickStart
 
         private void OnDestroy()
         {
-            if(HasAttitude())
-            {
+            if (HasAttitude()) {
                 InputSystem.DisableDevice(AttitudeSensor.current);
             }
-
+            if (HasAccelerometer()) {
+                InputSystem.DisableDevice(Accelerometer.current);
+            }
             InputServerManager.Instance.RemoveClient();
         }
 
@@ -182,9 +214,11 @@ namespace QuickStart
                 //    }
                 //}
                 // El cliente lanza el acelerómetro y eso
-                if (HasAttitude())
-                {
+                if (HasAttitude()) {
                     _attitude = AttitudeSensor.current.attitude.value.eulerAngles;
+                }
+                if (HasAccelerometer()) {
+                    _accelerometer = Accelerometer.current.acceleration.value;
                 }
             }
 

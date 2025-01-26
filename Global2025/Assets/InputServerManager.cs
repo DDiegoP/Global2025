@@ -35,23 +35,21 @@ public class InputServerManager : MonoBehaviour
     private void Start()
     {
         _inputData = new InputData();
-        _inputData.mouse_pos = Vector2.zero;
-        _inputData.mouse_rotation = 0f;
+        _inputData.mouse_pos_x = 0f;
+        _inputData.mouse_pos_y = 0f;
         _inputData.clicked = false;
         _inputData.microphone_loudness = 0f;
         
         if(AttitudeSensor.current != null) attitude_reference = AttitudeSensor.current.attitude.value.eulerAngles;
+        if(Accelerometer.current != null) accelerometer_reference = Accelerometer.current.acceleration.value;
     }
+
 
     [SerializeField]
-    float max_x_angle = 45f, max_y_angle = 30f;
+    float max_x_angle = 45f, max_y_value = 0.4f;
 
     Vector3 attitude_reference;
-
-    Vector2 GetMousePositionFromSensors(Vector3 atti)
-    {
-        return new Vector2(-NormalizeAttitude(atti.z, attitude_reference.z, max_x_angle), NormalizeAttitude(atti.x, attitude_reference.x, max_y_angle));
-    }
+    Vector3 accelerometer_reference;
 
     float floatModule(float a, float b)
     {
@@ -62,26 +60,26 @@ public class InputServerManager : MonoBehaviour
     {
         return Mathf.Clamp((floatModule(atti - atti_reference + 180f, 360f) - 180f) / max_angle, -1f, 1f);
     }
-
-    float GetMouseRotationFromSensors(Vector3 atti)
-    {
-        return atti.z - attitude_reference.z;
+    float NormalizeAccelerometer(float accel, float accel_reference, float max_value) {
+        return Mathf.Clamp(-(accel - accel_reference) / max_value, -1f, 1f);
     }
 
-    public void CalculateInput(Vector3 atti)
+    public void CalculateMouseX(Vector3 atti)
     {
-        _inputData.mouse_pos = GetMousePositionFromSensors(atti);
-        _inputData.mouse_rotation = GetMouseRotationFromSensors(atti);
-
-        // RELLENAR MICROFONO :)
-
-
-        // _inputData.microphone_loudness = microphone.GetLoudness();
+        _inputData.mouse_pos_x = -NormalizeAttitude(atti.z, attitude_reference.z, max_x_angle);
+    }
+    public void CalculateMouseY(Vector3 accel)
+    {
+        _inputData.mouse_pos_y = NormalizeAccelerometer(accel.y, accelerometer_reference.y, max_y_value);
     }
 
-    public void UpdateReference(Vector3 reference)
+    public void UpdateReference(Vector3 atti)
     {
-        attitude_reference = reference;
+        attitude_reference = atti;
+    }
+    public void UpdateAccelReference(Vector3 accel)
+    {
+        accelerometer_reference = accel;
     }
 
     public void UpdatePressingScreen(bool pressing)

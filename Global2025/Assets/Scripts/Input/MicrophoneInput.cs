@@ -11,12 +11,15 @@ public class MicrophoneInput {
     bool reading = false;
 
     public void StartReading() {
-        Debug.Log(Microphone.devices.Length);
+        if (Microphone.devices.Length <= 0)
+            return;
         microphoneClip = Microphone.Start(Microphone.devices[0], true, 20, AudioSettings.outputSampleRate);
         reading = true;
     }
 
     public void EndReading() {
+        if (Microphone.devices.Length <= 0)
+            return;
         Microphone.End(Microphone.devices[0]);
         reading = false;
     }
