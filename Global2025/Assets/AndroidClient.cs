@@ -1,4 +1,5 @@
 using FMOD.Studio;
+using FMODUnity;
 using Mirror;
 using System;
 using Unity.VisualScripting;
@@ -44,8 +45,7 @@ namespace QuickStart
         {
             if(_pressingScreen)
             {
-                // AQUÍ DIEGO
-
+                GetComponent<StudioEventEmitter>().Play();
             }
             InputServerManager.Instance.UpdatePressingScreen(_pressingScreen);
         }
@@ -179,6 +179,7 @@ namespace QuickStart
                         if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
                         {
                             _pressingScreen = true;
+                            GetComponent<StudioEventEmitter>().Play();
                         }
                         else if (touch.phase == UnityEngine.InputSystem.TouchPhase.Ended)
                         {
