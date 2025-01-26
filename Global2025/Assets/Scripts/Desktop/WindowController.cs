@@ -36,13 +36,14 @@ public class WindowController : MonoBehaviour
 
     [SerializeField]
     private StudioEventEmitter _musicEmitter = null;
-
+    private StudioEventEmitter _myEmitter = null;
     public int trackEvent = 1;
     private void Awake()
     {
         _windowManager = GetComponentInParent<WindowManager>();
         _canvas = GetComponent<Canvas>();
         _rectTransform = GetComponent<RectTransform>();
+        _myEmitter = GetComponent<StudioEventEmitter>();
     }
 
     private void Start()
@@ -59,6 +60,8 @@ public class WindowController : MonoBehaviour
         _windowManager.AddController(this);
         InstantiateNextScene(true);
         _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 1);
+        _myEmitter.SetParameter("Window", 0);
+        _myEmitter.Play();
     }
 
 
@@ -139,6 +142,8 @@ public class WindowController : MonoBehaviour
         _windowManager.RemoveController(this);
         if (_gameManager) Destroy(_gameManager.gameObject);
         _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 0);
+        _myEmitter.SetParameter("Window", 1);
+        _myEmitter.Play();
     }
 
     public void SetOrder(int order, bool hasFocus)

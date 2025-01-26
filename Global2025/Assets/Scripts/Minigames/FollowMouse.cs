@@ -1,4 +1,5 @@
 using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -27,6 +28,9 @@ public class FollowMouse : GameComponent
 
     [SerializeField]
     private Transform _canvas;
+
+
+    private StudioEventEmitter _emitter = null;
 
     void Start()
     {
