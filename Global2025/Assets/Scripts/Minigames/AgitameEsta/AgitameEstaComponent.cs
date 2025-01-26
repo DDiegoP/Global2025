@@ -79,7 +79,7 @@ public class AgitameEstaComponent : GameComponent
         GameObject bubbleInstance = GameObject.Instantiate(bubble, spawnPosRect.position + posOffset, Quaternion.identity, this.GetComponent<RectTransform>().transform);
 
         //alcance depende de lo que haya agitado el jugador (+offsets)
-        Vector3 vel = new Vector3(200*intensityFactor, 150, 0);
+        Vector3 vel = new Vector3(200*intensityFactor, 150 + (intensityFactor*50), 0);
         bubbleInstance.transform.localScale += scaleOffset;
         bubbleInstance.GetComponent<Rigidbody2D>().linearVelocity = vel + velOffset;
         bubbleInstance.GetComponent<BubbleDrinkComponent>().SetMinigameManager(_manager);
