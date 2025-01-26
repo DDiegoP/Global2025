@@ -784,40 +784,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
     - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      propertyPath: _color.b
-      value: 0.3607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      propertyPath: _color.g
-      value: 0.779937
-      objectReference: {fileID: 0}
-    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      propertyPath: _color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      propertyPath: _endMenu
-      value: 
-      objectReference: {fileID: 8801529245637289891, guid: 2b7b6905615cb324aaffd740beda23e5, type: 3}
-    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      propertyPath: trackEvent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: _musicEmitter
       value: 
       objectReference: {fileID: 1491186767}
-    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      propertyPath: _gameToInstantiate
-      value: 
-      objectReference: {fileID: 8801529245637289891, guid: e731936df89e4a74ea70114cf7c24254, type: 3}
     - target: {fileID: 5525098920963562152, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: m_Name
       value: Ventana Limpia
-      objectReference: {fileID: 0}
-    - target: {fileID: 5525098920963562152, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7582517853742313995, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: m_Pivot.x
@@ -900,13 +872,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5556719548202305889, guid: ba36902e93881aa458ebd902608f4990, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5525098920963562152, guid: ba36902e93881aa458ebd902608f4990, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 828585271}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba36902e93881aa458ebd902608f4990, type: 3}
 --- !u!1001 &482048999
 PrefabInstance:
@@ -916,85 +884,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
-    - target: {fileID: 248560117967624331, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: _color.b
-      value: 0.4283333
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: _color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: _color.r
-      value: 0.41913742
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: trackEvent
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: _gameManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: _musicEmitter
       value: 
       objectReference: {fileID: 1491186767}
-    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: _gameToInstantiate
-      value: 
-      objectReference: {fileID: 2607949932496674719, guid: f79291c9282c4c844b4b575171b0c172, type: 3}
-    - target: {fileID: 3453673819498094613, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4202001480998141278, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4202001480998141278, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6289aab9c01040a4c8025f2891bf1aa9, type: 3}
-    - target: {fileID: 4202001480998141278, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4202001480998141278, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4202001480998141278, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4234120566051122089, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5523670733959340821, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: m_Name
       value: Ventana Balloons
-      objectReference: {fileID: 0}
-    - target: {fileID: 5523670733959340821, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014236154534223652, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014236154534223652, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8254264722383802978, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8971063053979061157, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: m_Pivot.x
@@ -1077,50 +973,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7985070349372159266, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5523670733959340821, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 482049001}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
 --- !u!224 &482049000 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8971063053979061157, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
   m_PrefabInstance: {fileID: 482048999}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &482049001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271942003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -2122388338
-      Data2: 1306634063
-      Data3: -177724253
-      Data4: 1741544439
-    Path: event:/OpenWindow
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &509814794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,37 +1312,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4312686392003592570, guid: 2eb87496ce197254a9c45f89e48a7d8e, type: 3}
   m_PrefabInstance: {fileID: 3702914516264073309}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &817292267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817292266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -2122388338
-      Data2: 1306634063
-      Data3: -177724253
-      Data4: 1741544439
-    Path: event:/OpenWindow
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &828585269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5525098920963562152, guid: ba36902e93881aa458ebd902608f4990, type: 3}
@@ -1492,37 +1322,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7582517853742313995, guid: ba36902e93881aa458ebd902608f4990, type: 3}
   m_PrefabInstance: {fileID: 477721625}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &828585271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828585269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -2122388338
-      Data2: 1306634063
-      Data3: -177724253
-      Data4: 1741544439
-    Path: event:/OpenWindow
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1001 &884994162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1618,10 +1417,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5523670733959340821, guid: a218e490584d70b47b67cef1a0fa8361, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 884994165}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a218e490584d70b47b67cef1a0fa8361, type: 3}
 --- !u!224 &884994163 stripped
 RectTransform:
@@ -1633,37 +1429,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5523670733959340821, guid: a218e490584d70b47b67cef1a0fa8361, type: 3}
   m_PrefabInstance: {fileID: 884994162}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &884994165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884994164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -2122388338
-      Data2: 1306634063
-      Data3: -177724253
-      Data4: 1741544439
-    Path: event:/OpenWindow
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &973408278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,26 +1730,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ventana BubblePop
       objectReference: {fileID: 0}
-    - target: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
-      propertyPath: _color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
-      propertyPath: _color.g
-      value: 0.68101823
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
-      propertyPath: _color.r
-      value: 0.27358478
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
-      propertyPath: trackEvent
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: _musicEmitter
       value: 
@@ -1992,10 +1737,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1306297475}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
 --- !u!1 &1180956553
 GameObject:
@@ -2483,37 +2225,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1773826106922052473, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
   m_PrefabInstance: {fileID: 1127907131}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1306297475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306297473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -2122388338
-      Data2: 1306634063
-      Data3: -177724253
-      Data4: 1741544439
-    Path: event:/OpenWindow
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1325304545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,10 +2641,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
-    - target: {fileID: 1594411710123727600, guid: 92f33f03ffee3f445862960a4875e3b1, type: 3}
-      propertyPath: trackEvent
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1594411710123727600, guid: 92f33f03ffee3f445862960a4875e3b1, type: 3}
       propertyPath: _musicEmitter
       value: 
@@ -3782,21 +3489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ventana HighScore
       objectReference: {fileID: 0}
-    - target: {fileID: 4312686392003592570, guid: 2eb87496ce197254a9c45f89e48a7d8e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7012602872016861343, guid: 2eb87496ce197254a9c45f89e48a7d8e, type: 3}
-      propertyPath: _gameToInstantiate
-      value: 
-      objectReference: {fileID: 5400051766503772917, guid: ae0de8cbec886954aba1134a6fca786e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4312686392003592570, guid: 2eb87496ce197254a9c45f89e48a7d8e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 817292267}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eb87496ce197254a9c45f89e48a7d8e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

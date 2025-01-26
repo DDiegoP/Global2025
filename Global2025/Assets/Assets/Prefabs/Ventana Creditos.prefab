@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 6823790397335379330, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6289aab9c01040a4c8025f2891bf1aa9, type: 3}
+      objectReference: {fileID: 21300000, guid: 19fbe2ce9bd2606418026e3509347b63, type: 3}
     - target: {fileID: 6823790397335379330, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 8801529245637289891, guid: f93d6d0881028fe4c8c7fdc26491b9d9, type: 3}
     - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_text
-      value: "Cr\xE9ditos"
+      value: 'Made by:'
       objectReference: {fileID: 0}
     - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_fontSize
@@ -152,5 +152,44 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7525752059460304209, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4769255911392611441}
   m_SourcePrefab: {fileID: 100100000, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+--- !u!1 &5523670733959340821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+  m_PrefabInstance: {fileID: 7269508139495104732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4769255911392611441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5523670733959340821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2122388338
+      Data2: 1306634063
+      Data3: -177724253
+      Data4: 1741544439
+    Path: event:/OpenWindow
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

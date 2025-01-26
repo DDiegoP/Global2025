@@ -129,6 +129,10 @@ PrefabInstance:
       value: 0.41913742
       objectReference: {fileID: 0}
     - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: trackEvent
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 0}
@@ -142,15 +146,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_fontSize
-      value: 38.3
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_margin.z
       value: -69.09271
       objectReference: {fileID: 0}
+    - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d9254a795e28eb2429dfa26ece18c41d, type: 2}
+    - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7525752059460304209, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8791681226456808705}
   m_SourcePrefab: {fileID: 100100000, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+--- !u!1 &5523670733959340821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+  m_PrefabInstance: {fileID: 7269508139495104732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8791681226456808705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5523670733959340821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2122388338
+      Data2: 1306634063
+      Data3: -177724253
+      Data4: 1741544439
+    Path: event:/OpenWindow
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

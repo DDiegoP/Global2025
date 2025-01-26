@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 8300180341476212935}
   - component: {fileID: 526462965170718361}
   - component: {fileID: 8679656582688275101}
+  - component: {fileID: 6891420085093508119}
   m_Layer: 3
   m_Name: Ventana 2
   m_TagString: Untagged
@@ -458,6 +459,8 @@ MonoBehaviour:
   _maxScale: 1.5
   _minScale: 0.67
   _scaleFactor: 0.001
+  _musicEmitter: {fileID: 0}
+  trackEvent: 1
 --- !u!61 &8679656582688275101
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -504,6 +507,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1005, y: 618}
   m_EdgeRadius: 0
+--- !u!114 &6891420085093508119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5525098920963562152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2122388338
+      Data2: 1306634063
+      Data3: -177724253
+      Data4: 1741544439
+    Path: event:/OpenWindow
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7715316269357851596
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,9 +603,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUBBLE POP
+  m_text: "L\xEDmpiame esta"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d9254a795e28eb2429dfa26ece18c41d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -637,7 +671,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8451499207786836121

@@ -2204,7 +2204,6 @@ GameObject:
   - component: {fileID: 2954432091140146073}
   - component: {fileID: 4576259326335448051}
   - component: {fileID: 4350051283535201575}
-  - component: {fileID: 3276938486830952933}
   m_Layer: 3
   m_Name: Creditos
   m_TagString: Untagged
@@ -2311,6 +2310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGame: 1
   _background: {fileID: 5076078421827265234}
+  score: 0
+  _scoreName: 
 --- !u!114 &4350051283535201575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2325,49 +2326,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
---- !u!114 &3276938486830952933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801529245637289891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b814c940060b44b8aca1402efad63e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _manager: {fileID: 4576259326335448051}
-  _startTime: 30
-  _finishTime: 0
-  _callback:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RompemeEstaComponent, Assembly-CSharp
-        m_MethodName: gameFinished
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3971256378337762097}
-        m_TargetAssemblyTypeName: FadeOut, Assembly-CSharp
-        m_MethodName: StartFadeOut
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _text: {fileID: 0}
 --- !u!1 &8811104867698374578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,17 +2721,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639331bfa1418e94385804088b2b1237, type: 3}
---- !u!114 &3971256378337762097 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6920073464260418022, guid: 639331bfa1418e94385804088b2b1237, type: 3}
-  m_PrefabInstance: {fileID: 6275122335977226967}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2556f8ce02a645f45a95cb9ec3fbd199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5076078421827265234 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1253246349919444997, guid: 639331bfa1418e94385804088b2b1237, type: 3}

@@ -564,7 +564,7 @@ MonoBehaviour:
   _isGame: 1
   _background: {fileID: 8278614451007781133}
   score: 0
-  _scoreName: BalloonsHighScore
+  _scoreName: BalloonHighScore
 --- !u!114 &4888908234699371418
 MonoBehaviour:
   m_ObjectHideFlags: 0

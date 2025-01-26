@@ -129,6 +129,10 @@ PrefabInstance:
       value: 0.48700196
       objectReference: {fileID: 0}
     - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: trackEvent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 0}
@@ -147,6 +151,14 @@ PrefabInstance:
     - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_margin.z
       value: -69.09271
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d9254a795e28eb2429dfa26ece18c41d, type: 2}
+    - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
