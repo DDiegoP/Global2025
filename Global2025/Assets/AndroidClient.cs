@@ -42,6 +42,11 @@ namespace QuickStart
 
         private void UpdatePressingScreen(bool _Old, bool _New)
         {
+            if(_pressingScreen)
+            {
+                // AQUÍ DIEGO
+
+            }
             InputServerManager.Instance.UpdatePressingScreen(_pressingScreen);
         }
 
