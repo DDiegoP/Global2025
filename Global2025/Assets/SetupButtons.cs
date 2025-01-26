@@ -15,6 +15,7 @@ public class SetupButtons : MonoBehaviour
     public string GetLocalIPAddress()
     {
         var host = Dns.GetHostEntry(Dns.GetHostName());
+        Debug.Log(host.AddressList);
         foreach (var ip in host.AddressList)
         {
             if (ip.AddressFamily == AddressFamily.InterNetwork)
