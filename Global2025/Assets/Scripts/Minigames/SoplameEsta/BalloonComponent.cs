@@ -24,9 +24,7 @@ public class BalloonComponent : GameComponent
     {
         _blowing = false;
         _animator.Play("BubblePop");
-        //animacion explota burbuja
-        // Sonido de explosion
-        //_emitter.Play();
+        _emitter.Play();
     }
 
     private void ApplyScore()
@@ -49,7 +47,7 @@ public class BalloonComponent : GameComponent
     private void Start()
     {
        _scoreComponent = GetComponentInParent<ScoreComponent>();
-       //_emitter = GetComponent<StudioEventEmitter>();
+       _emitter = GetComponent<StudioEventEmitter>();
        _buble = GetComponentInParent<RectTransform>();
         _animator = GetComponent<Animator>();
     }
@@ -65,7 +63,6 @@ public class BalloonComponent : GameComponent
         {
             _blowing = false;
             ApplyScore();
-            //Animacion de que suba la burbuja
             SuccesfulBubble();
             ResetBubble();
         }

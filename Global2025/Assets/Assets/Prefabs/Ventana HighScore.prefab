@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6823790397335379330, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_Type
@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: _gameToInstantiate
+      value: 
+      objectReference: {fileID: 5400051766503772917, guid: ae0de8cbec886954aba1134a6fca786e, type: 3}
     - target: {fileID: 8526754758195224323, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_text
       value: Mejores Puntuaciones

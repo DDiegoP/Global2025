@@ -44,11 +44,21 @@ public class TimerComponent : GameComponent {
 
             if ((_decreasing && _elapsedTime <= _finishTime) || (!_decreasing && _elapsedTime >= _finishTime))
             {
-                // SE ACABO EL JUEGO
-                _elapsedTime = _startTime;
-                _callback.Invoke();
-                _finished = true;
+                StopTimer();
             }
         }
+    }
+
+    public void StopRunning()
+    {
+        _finished = true;
+        _elapsedTime = _startTime;
+    }
+
+    public void StopTimer()
+    {
+        _finished = true;
+        _elapsedTime = _startTime;
+        _callback.Invoke();
     }
 }

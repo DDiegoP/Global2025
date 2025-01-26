@@ -31,11 +31,6 @@ public class MinigameManager : MonoBehaviour
         _musicEmitter = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<StudioEventEmitter>();
     }
 
-    private void Start()
-    {
-        _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 1);
-    }
-
     public void RegisterComponent(GameComponent gameComponent)
     {
         _components.Add(gameComponent);
@@ -52,6 +47,7 @@ public class MinigameManager : MonoBehaviour
         {
             component.enabled = false;
         }
+        _musicEmitter.SetParameter("Track" + trackEvent.ToString(), 0);
     }
 
     private void OnEnable()
@@ -60,15 +56,11 @@ public class MinigameManager : MonoBehaviour
         {
             component.enabled = true;
         }
+        _musicEmitter.SetParameter("Track" + trackEvent.ToString(), 1);
     }
 
     public void ChangeScene()
     {
         _controller.InstantiateNextScene(!_isGame);
-    }
-
-    private void OnDestroy()
-    {
-        _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 0);
     }
 }
