@@ -530,7 +530,7 @@ PrefabInstance:
     - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: _gameToInstantiate
       value: 
-      objectReference: {fileID: 3465134598310481510, guid: 659ab819b19d7724c8824941822a5ecf, type: 3}
+      objectReference: {fileID: 8801529245637289891, guid: e731936df89e4a74ea70114cf7c24254, type: 3}
     - target: {fileID: 5525098920963562152, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: m_Name
       value: Ventana Limpia
