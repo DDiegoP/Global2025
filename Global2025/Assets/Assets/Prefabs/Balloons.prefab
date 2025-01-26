@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 3156608686567889812}
   - component: {fileID: 3105239551246980131}
   - component: {fileID: 2614092821049254978}
+  - component: {fileID: 747657790298024239}
   m_Layer: 5
   m_Name: Baloons (2)
   m_TagString: Untagged
@@ -216,6 +217,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &747657790298024239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547629456642649723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43e4e46f31f53e4eb347d62637cc6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 8401805173642282842}
 --- !u!1 &2245351444310313310
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +242,7 @@ GameObject:
   - component: {fileID: 2103455460052475737}
   - component: {fileID: 6174913776711145883}
   - component: {fileID: 1605874270770899160}
+  - component: {fileID: 9180722402401759491}
   m_Layer: 5
   m_Name: Baloons
   m_TagString: Untagged
@@ -314,6 +329,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9180722402401759491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245351444310313310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43e4e46f31f53e4eb347d62637cc6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 8401805173642282842}
 --- !u!1 &2559101535209518766
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,8 +563,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGame: 1
   _background: {fileID: 8278614451007781133}
-  _musicEmitter: {fileID: 0}
-  trackEvent: 1
 --- !u!114 &4888908234699371418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,6 +634,7 @@ GameObject:
   - component: {fileID: 2858380386251256903}
   - component: {fileID: 8001371602732754996}
   - component: {fileID: 1990953700286072493}
+  - component: {fileID: 3918597490417284785}
   m_Layer: 5
   m_Name: Baloons (3)
   m_TagString: Untagged
@@ -694,6 +721,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3918597490417284785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834716225984040222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43e4e46f31f53e4eb347d62637cc6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 8401805173642282842}
 --- !u!1 &3877757230970800483
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +918,7 @@ GameObject:
   - component: {fileID: 2307661178286729487}
   - component: {fileID: 7197512242064228114}
   - component: {fileID: 4177773495761789254}
+  - component: {fileID: 6007072930002313861}
   m_Layer: 5
   m_Name: Baloons (1)
   m_TagString: Untagged
@@ -964,6 +1005,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6007072930002313861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138342190305884776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43e4e46f31f53e4eb347d62637cc6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 8401805173642282842}
 --- !u!1 &4537874372716757401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1318,7 @@ GameObject:
   - component: {fileID: 5825787797141582812}
   - component: {fileID: 3048871019759434060}
   - component: {fileID: 7826603476754712920}
+  - component: {fileID: 8951789437017889434}
   m_Layer: 5
   m_Name: Bubble
   m_TagString: Untagged
@@ -1398,6 +1453,19 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &8951789437017889434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304870766186942144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43e4e46f31f53e4eb347d62637cc6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 8401805173642282842}
 --- !u!1 &7438252133860423385
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,8 +44,11 @@ public class BalloonComponent : GameComponent
         Instantiate(_bubbleFloat, transform.parent);
     }
 
+    InputManager _input;
+
     private void Start()
     {
+        _input = transform.root.GetComponent<InputManager>();
        _scoreComponent = GetComponentInParent<ScoreComponent>();
        _emitter = GetComponent<StudioEventEmitter>();
        _buble = GetComponentInParent<RectTransform>();
@@ -55,11 +58,11 @@ public class BalloonComponent : GameComponent
     // Update is called once per frame
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (_input.GetPop())
         {
             _blowing = true;
         }
-        else if (_blowing && Mouse.current.leftButton.wasReleasedThisFrame)
+        else if (_blowing && _input.GetRelease())
         {
             _blowing = false;
             ApplyScore();

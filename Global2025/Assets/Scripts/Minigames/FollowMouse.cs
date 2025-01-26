@@ -44,8 +44,10 @@ public class FollowMouse : GameComponent
 
     void Update()
     {
-        Vector3 pos = new Vector3(_input.GetPointerPosition().x, _input.GetPointerPosition().y, transform.position.z);
-        transform.SetPositionAndRotation(pos, Quaternion.identity);
+        //Vector3 pos = new Vector3(_input.GetPointerPosition().x, _input.GetPointerPosition().y, transform.position.z);
+        //transform.SetPositionAndRotation(pos, Quaternion.identity);
+
+        _input.UpdatePos(transform);
 
         elapsedTime += Time.deltaTime;
 
@@ -62,7 +64,6 @@ public class FollowMouse : GameComponent
 
         if (_input.GetPressed())
         {
-
             RaycastHit2D[] hits = new RaycastHit2D[10];
             Physics2D.Raycast(new Vector3(_rectTransform.position.x, _rectTransform.position.y, -10), Camera.main.transform.forward, new ContactFilter2D(), hits);
             RaycastHit2D hit = new RaycastHit2D();
