@@ -578,8 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d524064e359b747b823964735dfc28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
-  _updatePanel: {fileID: 0}
   max_x_angle: 45
   max_y_angle: 30
 --- !u!1 &4144300731548387417
@@ -994,16 +992,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MyNetworkManager, Assembly-CSharp
-        m_MethodName: StartServer
-        m_Mode: 1
+      - m_Target: {fileID: 3215386882313439614, guid: cd782c402ffdd7d42a3f3124bd19f392, type: 3}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Desktop 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5452256962108556033

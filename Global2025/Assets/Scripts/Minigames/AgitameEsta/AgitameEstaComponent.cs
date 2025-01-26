@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using FMODUnity;
 
 
 public class AgitameEstaComponent : GameComponent
@@ -40,6 +41,7 @@ public class AgitameEstaComponent : GameComponent
     private float bubbleAnimationTime;
     private float currentAnimationTime;
 
+    StudioEventEmitter _emitter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +57,7 @@ public class AgitameEstaComponent : GameComponent
         offsetRotation = new Vector3(0, 0, 30f);
         targetRotation = Quaternion.Euler(offsetRotation+ initialRotation);
         intensityIncrease = 0.022f;
+        _emitter = GetComponent<StudioEventEmitter>();
     }
 
     //funcion callback timer finish time agitando
@@ -64,7 +67,7 @@ public class AgitameEstaComponent : GameComponent
         isMoving = false;
         shoot = true;
         currentAnimationTime = 0;
-        
+        _emitter.Play();
     }
    
     void Shoot()
@@ -79,7 +82,7 @@ public class AgitameEstaComponent : GameComponent
         GameObject bubbleInstance = GameObject.Instantiate(bubble, spawnPosRect.position + posOffset, Quaternion.identity, this.GetComponent<RectTransform>().transform);
 
         //alcance depende de lo que haya agitado el jugador (+offsets)
-        Vector3 vel = new Vector3(200*intensityFactor, 150, 0);
+        Vector3 vel = new Vector3(200*intensityFactor, 150 + (intensityFactor*50), 0);
         bubbleInstance.transform.localScale += scaleOffset;
         bubbleInstance.GetComponent<Rigidbody2D>().linearVelocity = vel + velOffset;
         bubbleInstance.GetComponent<BubbleDrinkComponent>().SetMinigameManager(_manager);
@@ -91,6 +94,7 @@ public class AgitameEstaComponent : GameComponent
             shoot = false;
             scoreComponent.changeScore(Mathf.Floor((intensityFactor-0.3f)* 100));
             //Call end function end game bla
+            _emitter.Stop();
         }
 
     }
