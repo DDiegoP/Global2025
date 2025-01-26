@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{aed2a32f-74ae-4548-8de9-455c7ade659b}">
+		<property name="assetPath">
+			<value>Blow.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.7924943310657597</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{80121f4d-be0e-41e7-b315-8e08314aee5d}</destination>
+		</relationship>
+	</object>
+</objects>
