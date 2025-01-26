@@ -547,7 +547,6 @@ MonoBehaviour:
   _manager: {fileID: 0}
   endPos: {fileID: 7816410231541592461}
   midPos: {fileID: 8887724342178429489}
-  lifeTime: 20
   waitingTime: 3
 --- !u!1 &3397493897509402262
 GameObject:
@@ -1005,6 +1004,7 @@ GameObject:
   - component: {fileID: 4836677329902400792}
   - component: {fileID: 4150117928757300404}
   - component: {fileID: 8261241292301511998}
+  - component: {fileID: 6651811925482203824}
   m_Layer: 3
   m_Name: AgitaLata
   m_TagString: Untagged
@@ -1205,6 +1205,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _manager: {fileID: 4576259326335448051}
   _text: {fileID: 8265767082028148112}
+--- !u!114 &6651811925482203824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801529245637289891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2061687352
+      Data2: 1168170681
+      Data3: -620058945
+      Data4: -838335331
+    Path: event:/SodaOpen
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8887724342178429489
 GameObject:
   m_ObjectHideFlags: 0
