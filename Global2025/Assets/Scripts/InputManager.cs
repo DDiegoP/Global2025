@@ -1,24 +1,26 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
     private bool _mobileInput;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void SetMobileInput(bool mobile)
-    {
-        _mobileInput = mobile;
-    }
+
+    InputData _data;
+
+    [SerializeField]
+    Vector2 _minigameSize = new Vector2(958, 539);
 
     // Update is called once per frame
     void Update()
     {
-        
+        _mobileInput = InputServerManager.Instance.HasClients();
+        _data = InputServerManager.Instance.GetInputData();
     }
 
     public Vector2 GetPointerPosition() 
     {
-        if(_mobileInput) return Vector2.zero;
+        if(_mobileInput) return new Vector2(_data.mouse_pos.x * _minigameSize.x, _data.mouse_pos.y * _minigameSize.y);
         else return Mouse.current.position.ReadValue();
     }
 
@@ -30,13 +32,13 @@ public class InputManager : MonoBehaviour
 
     public bool GetPop()
     {
-        if (_mobileInput) return false;
+        if (_mobileInput) return _data.justClicked;
         else return Mouse.current.leftButton.wasPressedThisFrame;
     }
 
     public bool GetRelease()
     {
-        if (_mobileInput) return false;
+        if (_mobileInput) return _data.justReleased;
         else return Mouse.current.leftButton.wasReleasedThisFrame;
     }
 
