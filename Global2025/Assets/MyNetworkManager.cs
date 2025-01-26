@@ -36,7 +36,7 @@ public class MyNetworkManager : MonoBehaviour
         _manager = GetComponent<NetworkManager>();
 
         // Este es el servidor donde suceden las cosas :)
-        if (_userType == USER_TYPE.Server)
+        if (_userType == USER_TYPE.Server && Application.platform != RuntimePlatform.Android)
         {
             Instantiate(_serverScene);
         }

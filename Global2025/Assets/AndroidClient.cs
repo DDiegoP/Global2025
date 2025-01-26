@@ -1,14 +1,18 @@
 using FMOD.Studio;
 using Mirror;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.UI;
+using EnhancedTouch = UnityEngine.InputSystem.EnhancedTouch;
 
 namespace QuickStart
 {
     public class AndroidClient : NetworkBehaviour
     {
+        [SerializeField]
+        private Image _pressingScreenFeedback = null;
+
         [SerializeField]
         private GameObject _androidCanvas = null;
 
@@ -22,7 +26,24 @@ namespace QuickStart
         // no nos importa el valor como tal, solo que cambie
         private bool _updateReferenceToggle = false;
 
+        [SyncVar(hook = nameof(UpdateReference2AhoraConElMovil))]
         Vector3 attitude_reference;
+
+        [SyncVar(hook = nameof(UpdatePressingScreen))]
+        bool _pressingScreen = false;
+
+        [SerializeField]
+        private Transform _interactionLimits = null;
+
+        private void UpdatePressingScreen(bool _Old, bool _New)
+        {
+            InputServerManager.Instance.UpdatePressingScreen(_pressingScreen);
+        }
+
+        private void UpdateReference2AhoraConElMovil(Vector3 _Old, Vector3 _New)
+        {
+            InputServerManager.Instance.UpdateReference(_New);
+        }
 
         private void UpdateReference(bool _Old, bool _New)
         {
@@ -32,27 +53,47 @@ namespace QuickStart
 
         public void SetAsReference()
         {
-            if (AttitudeSensor.current != null) attitude_reference = AttitudeSensor.current.attitude.value.eulerAngles;
+            if (AttitudeSensor.current != null) 
+                attitude_reference = AttitudeSensor.current.attitude.value.eulerAngles;
         }
 
         void UpdateAttitude(Vector3 _Old, Vector3 _New)
         {
-            Debug.LogError("New value from accelerometer: " + _New);
             InputServerManager.Instance.CalculateInput(_New);
         }
 
 
         public void UpdateReferenceToggle()
         {
-            _updateReferenceToggle = !_updateReferenceToggle;
             SetAsReference();
+            _updateReferenceToggle = !_updateReferenceToggle;
         }
 
-        Accelerometer _accel;
 
         private bool HasAttitude()
         {
             return AttitudeSensor.current != null;
+        }
+
+        private void OnEnable()
+        {
+            EnhancedTouch.TouchSimulation.Enable();
+            EnhancedTouch.EnhancedTouchSupport.Enable();
+        }
+
+        private void OnDisable()
+        {
+            EnhancedTouch.TouchSimulation.Disable();
+            EnhancedTouch.EnhancedTouchSupport.Disable();
+        }
+
+        private void Touch(InputAction.CallbackContext ctx)
+        {
+            float value = ctx.ReadValue<float>();
+            
+            Debug.LogError(value);
+
+            _pressingScreen = value > 0.0f;
         }
 
         private void Start()
@@ -99,13 +140,47 @@ namespace QuickStart
 
         void Update()
         {
-            // El cliente lanza el acelerómetro y eso
-            if(HasAttitude())
+            if(isLocalPlayer)
             {
-                Debug.LogError("Tengo attitude");
-                _attitude = AttitudeSensor.current.attitude.value.eulerAngles;
-                Debug.LogError("Este es mi valor de attitude: " + _attitude.ToString());
+                if(EnhancedTouch.Touch.activeTouches.Count > 0)
+                {
+                    EnhancedTouch.Touch touch = EnhancedTouch.Touch.activeTouches[0];
+                    if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+                    {
+                        _pressingScreen = true;
+                    }
+                    else if (touch.phase == UnityEngine.InputSystem.TouchPhase.Ended)
+                    {
+                        _pressingScreen = false;
+                    }
+                }
+                //if (Input.touchCount > 0)
+                //{
+                //    Touch touch = Input.GetTouch(0);
+
+                //    Debug.LogError(touch.position.y + " " + _interactionLimits.position.y);
+                //    if (touch.position.y < _interactionLimits.position.y)
+                //    {
+                //        if (touch.phase != UnityEngine.TouchPhase.Began)
+                //        {
+                //            Debug.LogError("Touch started");
+                //            _pressingScreen = true;
+                //        }
+                //        else if (touch.phase == UnityEngine.TouchPhase.Ended)
+                //        {
+                //            Debug.LogError("Touch ENDED");
+                //            _pressingScreen = false;
+                //        }
+                //    }
+                //}
+                // El cliente lanza el acelerómetro y eso
+                if (HasAttitude())
+                {
+                    _attitude = AttitudeSensor.current.attitude.value.eulerAngles;
+                }
             }
+
+            _pressingScreenFeedback.enabled = _pressingScreen;
         }
     }
 }

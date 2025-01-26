@@ -80,4 +80,14 @@ public class InputServerManager : MonoBehaviour
         attitude_reference = reference;
         _updatePanel.SetActive(!_updatePanel.activeSelf);
     }
+
+    public void UpdatePressingScreen(bool pressing)
+    {
+        _inputData.clicked = pressing;
+    }
+
+    private void Update()
+    {
+        _updatePanel.SetActive(_inputData.clicked);
+    }
 }
