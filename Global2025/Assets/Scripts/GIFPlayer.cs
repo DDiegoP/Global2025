@@ -3,13 +3,15 @@ using UnityEngine.UI;
 public class GIFPlayer : MonoBehaviour
 {
     [SerializeField] Sprite[] frames;
+    public int framesCount;
     [SerializeField] Image imageReference;
     float frameDelay = 0.08f;
-    int currFrame = 0;
+    public int currFrame = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()    
     {
         InvokeRepeating(nameof(changeFrame), 0.0f,  frameDelay);
+        framesCount = frames.Length;
     }
 
     // Update is called once per frame
@@ -18,9 +20,9 @@ public class GIFPlayer : MonoBehaviour
     }
 
     void changeFrame(){
-        imageReference.sprite = frames[currFrame];
         currFrame++;
-        currFrame %= frames.Length;
+        currFrame %= framesCount;
+        imageReference.sprite = frames[currFrame];
     }
 
     void OnDestroy(){
