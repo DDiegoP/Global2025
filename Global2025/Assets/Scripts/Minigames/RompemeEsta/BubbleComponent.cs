@@ -6,6 +6,8 @@ public class BubbleComponent : GameComponent
     public bool negativeBubble = false;
     private ScoreComponent _scoreComponent;
     private StudioEventEmitter _emitter;
+    private Animator _animator;
+
 
     [SerializeField]
     private float _offset = 5;
@@ -13,6 +15,11 @@ public class BubbleComponent : GameComponent
     private Vector3 _nextPosition;
     private Vector3 _initialPosition;
     private Vector3 _direction;
+
+    public void AnimatePop()
+    {
+        _animator.Play("BubblePositivePop");
+    }
 
     public void Pop()
     {
@@ -33,6 +40,7 @@ public class BubbleComponent : GameComponent
 
     private void Start()
     {
+        _animator = GetComponent<Animator>();
         _scoreComponent = GetComponentInParent<ScoreComponent>();
         _emitter = GetComponent<StudioEventEmitter>();
     }
