@@ -28,7 +28,7 @@ public class HandCursorComponent : GameComponent
         _input.UpdatePos(transform);
         if (_currentBubble != null && _input.GetPop())
         {
-            _currentBubble.Pop();
+            _currentBubble.AnimatePop();
             _currentBubble = null;
         }
     }
