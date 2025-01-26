@@ -1,3 +1,4 @@
+using FMODUnity;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ public class MinigameManager : MonoBehaviour
     [SerializeField]
     private RawImage _background;
 
+    [SerializeField]
+    private StudioEventEmitter _musicEmitter = null;
+
+    public int trackEvent = 1;
+
     public void SetColor(Color c)
     {
         if(_background) _background.color = new Color(c.r, c.g, c.b, _isGame ? 0 : 1);
@@ -22,6 +28,12 @@ public class MinigameManager : MonoBehaviour
     public void Awake()
     {
         _controller = GetComponentInParent<WindowController>();
+        _musicEmitter = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<StudioEventEmitter>();
+    }
+
+    private void Start()
+    {
+        _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 1);
     }
 
     public void RegisterComponent(GameComponent gameComponent)
@@ -53,5 +65,10 @@ public class MinigameManager : MonoBehaviour
     public void ChangeScene()
     {
         _controller.InstantiateNextScene(!_isGame);
+    }
+
+    private void OnDestroy()
+    {
+        _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 0);
     }
 }

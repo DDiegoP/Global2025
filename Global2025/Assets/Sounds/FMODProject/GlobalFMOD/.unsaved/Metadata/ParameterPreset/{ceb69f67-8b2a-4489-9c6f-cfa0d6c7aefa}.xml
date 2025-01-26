@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ceb69f67-8b2a-4489-9c6f-cfa0d6c7aefa}">
+		<property name="name">
+			<value>Track4</value>
+		</property>
+		<relationship name="folder">
+			<destination>{00b68111-a09b-4561-9e51-214ad274645b}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8faf56d6-6f61-41f3-9844-2b9988da825d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8faf56d6-6f61-41f3-9844-2b9988da825d}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.43999999761581421</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>0.43999999761581421</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
