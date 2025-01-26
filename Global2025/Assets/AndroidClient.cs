@@ -61,7 +61,7 @@ namespace QuickStart
 
         private void UpdateReference(bool _Old, bool _New)
         {
-            // Aquí meter los valores con los que queremos tomar la snapshot de la referencia
+            // Aquï¿½ meter los valores con los que queremos tomar la snapshot de la referencia
             InputServerManager.Instance.UpdateReference(attitude_reference);
             InputServerManager.Instance.UpdateAccelReference(accelerometer_reference);
         }
@@ -139,7 +139,7 @@ namespace QuickStart
             }
             else
             {
-                Debug.LogError("NO TIENES ACELERÓMETRO");
+                Debug.LogError("NO TIENES ACELERï¿½METRO");
             }
 
             InputServerManager.Instance.AddClient();
@@ -206,7 +206,7 @@ namespace QuickStart
                 //        }
                 //    }
                 //}
-                // El cliente lanza el acelerómetro y eso
+                // El cliente lanza el acelerï¿½metro y eso
                 if (HasAttitude()) {
                     _attitude = AttitudeSensor.current.attitude.value.eulerAngles;
                 }
