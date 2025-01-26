@@ -1791,6 +1791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGame: 1
   _background: {fileID: 5076078421827265234}
+  _musicEmitter: {fileID: 0}
+  trackEvent: 2
 --- !u!114 &4350051283535201575
 MonoBehaviour:
   m_ObjectHideFlags: 0

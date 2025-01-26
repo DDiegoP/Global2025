@@ -20,8 +20,7 @@ public class BubbleComponent : GameComponent
         // Llamar al score component
         _scoreComponent.changeScore(sign * 5);
         gameObject.SetActive(false);
-        // Sonido de explotar
-        //_emitter.Play();
+        _emitter.Play();
     }
 
     private void calculateNextPosition()
@@ -29,13 +28,13 @@ public class BubbleComponent : GameComponent
         _nextPosition = new Vector3(Random.Range(_initialPosition.x - _offset, _initialPosition.x + _offset),
             Random.Range(_initialPosition.y - _offset, _initialPosition.y + _offset), 0);
 
-        _direction = (_nextPosition - transform.localPosition) / 50.0f;
+        _direction = (_nextPosition - transform.localPosition);
     }
 
     private void Start()
     {
         _scoreComponent = GetComponentInParent<ScoreComponent>();
-        //_emitter = GetComponent<StudioEventEmitter>();
+        _emitter = GetComponent<StudioEventEmitter>();
     }
 
     public void SetStartPosition(Vector3 position)
@@ -51,6 +50,6 @@ public class BubbleComponent : GameComponent
         {
             calculateNextPosition();
         }
-        transform.localPosition += _direction;
+        transform.localPosition += _direction * Time.deltaTime;
     }
 }
