@@ -115,7 +115,6 @@ public class AgitameEstaComponent : GameComponent
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(intensityFactor);
         if (isMoving)
         {
             RotateArm();
