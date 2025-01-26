@@ -107,9 +107,14 @@ public class FollowMouse : GameComponent
             if (elapsedTime >= instanceTime && !startFinishAnim)
             {
                 int dirty = comp.checkDirtyNess();
+                // Cosa de no shaders
+                Color c = hit.collider.GetComponent<Image>().color;
+                Debug.Log(1 - dirty / 100);
+                hit.collider.GetComponent<CanvasRenderer>().SetAlpha(1 - dirty / 100.0f);
+                // hasta aqui
                 if (dirty <= 30) showSoap(0);
-                else if (dirty <= 60) showSoap(1);
-                else if (dirty <= 85) showSoap(2);
+                else if (dirty <= 40) showSoap(1);
+                else if (dirty <= 60) showSoap(2);
                 else
                 {
                     brillitos.SetActive(true);
