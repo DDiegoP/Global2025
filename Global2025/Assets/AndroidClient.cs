@@ -1,5 +1,6 @@
 using FMOD.Studio;
 using Mirror;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -145,13 +146,16 @@ namespace QuickStart
                 if(EnhancedTouch.Touch.activeTouches.Count > 0)
                 {
                     EnhancedTouch.Touch touch = EnhancedTouch.Touch.activeTouches[0];
-                    if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+                    if(touch.screenPosition.y < _interactionLimits.position.y)
                     {
-                        _pressingScreen = true;
-                    }
-                    else if (touch.phase == UnityEngine.InputSystem.TouchPhase.Ended)
-                    {
-                        _pressingScreen = false;
+                        if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
+                        {
+                            _pressingScreen = true;
+                        }
+                        else if (touch.phase == UnityEngine.InputSystem.TouchPhase.Ended)
+                        {
+                            _pressingScreen = false;
+                        }
                     }
                 }
                 //if (Input.touchCount > 0)
