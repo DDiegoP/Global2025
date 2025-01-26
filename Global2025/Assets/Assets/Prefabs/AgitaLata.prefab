@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 512541016288589238}
   - component: {fileID: 6310038160597945400}
   - component: {fileID: 6578736169425462439}
+  - component: {fileID: 5330942652732859561}
   m_Layer: 3
   m_Name: Seagull
   m_TagString: Untagged
@@ -548,6 +549,19 @@ MonoBehaviour:
   endPos: {fileID: 7816410231541592461}
   midPos: {fileID: 8887724342178429489}
   waitingTime: 3
+--- !u!114 &5330942652732859561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357671596918794254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43e4e46f31f53e4eb347d62637cc6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 4576259326335448051}
 --- !u!1 &3397493897509402262
 GameObject:
   m_ObjectHideFlags: 0
