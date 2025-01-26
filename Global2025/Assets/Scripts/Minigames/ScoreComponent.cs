@@ -17,4 +17,9 @@ public class ScoreComponent : GameComponent
         _score = 0;
         if (_text != null) _text.text = "Score: " + _score;
     }
+
+    public void SetScore()
+    {
+        _manager.score = (int)_score;
+    }
 }

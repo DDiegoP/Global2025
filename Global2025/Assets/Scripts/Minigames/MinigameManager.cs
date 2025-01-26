@@ -15,6 +15,11 @@ public class MinigameManager : MonoBehaviour
     [SerializeField]
     private RawImage _background;
 
+    public int score;
+
+    [SerializeField]
+    private string _scoreName;
+
     public void SetColor(Color c)
     {
         if(_background) _background.color = new Color(c.r, c.g, c.b, _isGame ? 0 : 1);
@@ -53,6 +58,8 @@ public class MinigameManager : MonoBehaviour
 
     public void ChangeScene()
     {
+        if(_isGame && score > PlayerPrefs.GetInt(_scoreName, 0)) 
+            PlayerPrefs.SetInt(_scoreName, (int)score);
         _controller.InstantiateNextScene(!_isGame);
     }
 }

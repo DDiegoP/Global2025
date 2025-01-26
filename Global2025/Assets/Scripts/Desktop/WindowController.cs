@@ -158,16 +158,17 @@ public class WindowController : MonoBehaviour
 
     public void InstantiateNextScene(bool isMinigame)
     {
-        if (_gameManager) Destroy(_gameManager.gameObject);
+        int score = 0;
+        if (_gameManager)
+        {
+            score = _gameManager.score;
+            Destroy(_gameManager.gameObject);
+        }
+
         GameObject instance = Instantiate(isMinigame ? _gameToInstantiate : _endMenu, GetComponent<RectTransform>());
         RectTransform rectTransform = instance.GetComponent<RectTransform>();
         _gameManager = instance.GetComponent<MinigameManager>();
         _gameManager.SetColor(_color);
-        //rectTransform.anchoredPosition = new Vector3(0, -13.75f, 5);
-        //rectTransform.sizeDelta = new Vector2(958, 539);
-        //rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-        //rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-        //rectTransform.pivot = new Vector2(0.5f, 0.5f);
-        //rectTransform.localScale = new Vector3(1, 1, 1);
+        if (!isMinigame) _gameManager.score = score;
     }
 }

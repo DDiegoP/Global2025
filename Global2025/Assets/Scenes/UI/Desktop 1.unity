@@ -806,7 +806,7 @@ PrefabInstance:
     - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: _musicEmitter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1491186767}
     - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: _gameToInstantiate
       value: 
@@ -943,7 +943,7 @@ PrefabInstance:
     - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: _musicEmitter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1491186767}
     - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: _gameToInstantiate
       value: 
@@ -1988,7 +1988,7 @@ PrefabInstance:
     - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: _musicEmitter
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1491186767}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2930,6 +2930,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
+    - target: {fileID: 1594411710123727600, guid: 92f33f03ffee3f445862960a4875e3b1, type: 3}
+      propertyPath: trackEvent
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594411710123727600, guid: 92f33f03ffee3f445862960a4875e3b1, type: 3}
+      propertyPath: _musicEmitter
+      value: 
+      objectReference: {fileID: 1491186767}
     - target: {fileID: 5523670733959340821, guid: 92f33f03ffee3f445862960a4875e3b1, type: 3}
       propertyPath: m_Name
       value: Ventana AgitaLata
@@ -3154,6 +3162,7 @@ GameObject:
   - component: {fileID: 1491186761}
   - component: {fileID: 1491186765}
   - component: {fileID: 1491186766}
+  - component: {fileID: 1491186767}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: MainCanvas
@@ -3285,6 +3294,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minigameSize: {x: 958, y: 539}
+--- !u!114 &1491186767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491186760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 560047828
+      Data2: 1283691993
+      Data3: -1492426838
+      Data4: -1609148771
+    Path: event:/Music
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1754339633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5523670733959340821, guid: 92f33f03ffee3f445862960a4875e3b1, type: 3}

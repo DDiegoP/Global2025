@@ -1196,6 +1196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGame: 1
   _background: {fileID: 4019262966143441048}
+  score: 0
+  _scoreName: SoapHighScore
 --- !u!114 &4350051283535201575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,6 +1243,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _text: {fileID: 7865681326283052111}
+  _setScoreAsTimer: 1
 --- !u!1001 &2784111554094446749
 PrefabInstance:
   m_ObjectHideFlags: 0

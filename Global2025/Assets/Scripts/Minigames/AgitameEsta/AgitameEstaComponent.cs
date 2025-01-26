@@ -7,6 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using FMODUnity;
+using UnityEngine.Events;
 
 
 public class AgitameEstaComponent : GameComponent
@@ -44,6 +45,9 @@ public class AgitameEstaComponent : GameComponent
     StudioEventEmitter _emitter;
 
     InputManager _input;
+
+    [SerializeField]
+    private UnityEvent _end;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -98,6 +102,7 @@ public class AgitameEstaComponent : GameComponent
             scoreComponent.changeScore(Mathf.Floor((intensityFactor-0.3f)* 100));
             //Call end function end game bla
             _emitter.Stop();
+            _end.Invoke();
         }
 
     }
