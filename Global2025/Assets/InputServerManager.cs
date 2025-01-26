@@ -20,6 +20,18 @@ public class InputServerManager : MonoBehaviour
 
     public InputData GetInputData() { return _inputData; }
 
+    int _numClients = 0;
+
+    public void AddClient()
+    {
+        _numClients++;
+    }
+
+    public void RemoveClient()
+    {
+        _numClients--;
+    }
+
     private void Start()
     {
         _inputData = new InputData();
@@ -30,12 +42,6 @@ public class InputServerManager : MonoBehaviour
         
         if(AttitudeSensor.current != null) attitude_reference = AttitudeSensor.current.attitude.value.eulerAngles;
     }
-
-    [SerializeField]
-    TextMeshProUGUI _text;
-
-    [SerializeField]
-    GameObject _updatePanel;
 
     [SerializeField]
     float max_x_angle = 45f, max_y_angle = 30f;
@@ -64,8 +70,6 @@ public class InputServerManager : MonoBehaviour
 
     public void CalculateInput(Vector3 atti)
     {
-        _text.text = atti.ToString();
-
         _inputData.mouse_pos = GetMousePositionFromSensors(atti);
         _inputData.mouse_rotation = GetMouseRotationFromSensors(atti);
 
@@ -78,16 +82,18 @@ public class InputServerManager : MonoBehaviour
     public void UpdateReference(Vector3 reference)
     {
         attitude_reference = reference;
-        _updatePanel.SetActive(!_updatePanel.activeSelf);
     }
 
     public void UpdatePressingScreen(bool pressing)
     {
+        _inputData.justReleased = pressing && !_inputData.clicked;
+        _inputData.justClicked = !pressing && _inputData.clicked;
         _inputData.clicked = pressing;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        _updatePanel.SetActive(_inputData.clicked);
+        _inputData.justReleased = false;
+        _inputData.justClicked = false;
     }
 }
