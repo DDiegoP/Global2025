@@ -43,9 +43,12 @@ public class AgitameEstaComponent : GameComponent
 
     StudioEventEmitter _emitter;
 
+    InputManager _input;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _input = transform.root.GetComponent<InputManager>();
         isMoving = true;
         shoot = false;
         spawnPosRect = spawnPos.GetComponent<RectTransform>();
@@ -119,7 +122,7 @@ public class AgitameEstaComponent : GameComponent
         if (isMoving)
         {
             RotateArm();
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (_input.GetPop())
             {
                 intensityFactor += intensityIncrease;
             }

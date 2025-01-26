@@ -88,11 +88,14 @@ public class InputServerManager : MonoBehaviour
     {
         _inputData.justReleased = !pressing && _inputData.clicked;
         _inputData.justClicked = pressing && !_inputData.clicked;
+        
         _inputData.clicked = pressing;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
+        Debug.Log("OWO: "+ _inputData.justClicked);
+
         _inputData.justReleased = false;
         _inputData.justClicked = false;
     }

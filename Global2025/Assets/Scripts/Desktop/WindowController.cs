@@ -46,8 +46,11 @@ public class WindowController : MonoBehaviour
         _myEmitter = GetComponent<StudioEventEmitter>();
     }
 
+    InputManager _input;
+    
     private void Start()
     {
+        _input = transform.root.GetComponent<InputManager>();
         _isDragging = false;
         _boxCollider = GetComponent<BoxCollider2D>();
         _barHalfHeight = _rectTransformBar.sizeDelta.y / 2;
