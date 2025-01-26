@@ -784,6 +784,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
     - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
+      propertyPath: _color.b
+      value: 0.030978873
+      objectReference: {fileID: 0}
+    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
+      propertyPath: _color.g
+      value: 0.28974253
+      objectReference: {fileID: 0}
+    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
+      propertyPath: _color.r
+      value: 0.86415094
+      objectReference: {fileID: 0}
+    - target: {fileID: 526462965170718361, guid: ba36902e93881aa458ebd902608f4990, type: 3}
       propertyPath: _musicEmitter
       value: 
       objectReference: {fileID: 1491186767}
@@ -884,6 +896,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491186764}
     m_Modifications:
+    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+      propertyPath: _color.b
+      value: 0.19547121
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+      propertyPath: _color.g
+      value: 0.4641509
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
+      propertyPath: _color.r
+      value: 0.19179066
+      objectReference: {fileID: 0}
     - target: {fileID: 1594411710123727600, guid: fe0494a39ed744b4d92e045645f305ba, type: 3}
       propertyPath: _musicEmitter
       value: 
@@ -1729,6 +1753,18 @@ PrefabInstance:
     - target: {fileID: 2903271892715865033, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: m_Name
       value: Ventana BubblePop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: _color.b
+      value: 0.5924529
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: _color.g
+      value: 0.3775929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
+      propertyPath: _color.r
+      value: 0.10172303
       objectReference: {fileID: 0}
     - target: {fileID: 8269178615846894124, guid: 3930fbd0a9cd51542810612e4fc6c119, type: 3}
       propertyPath: _musicEmitter
