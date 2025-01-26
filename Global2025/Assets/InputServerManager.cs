@@ -22,6 +22,8 @@ public class InputServerManager : MonoBehaviour
 
     int _numClients = 0;
 
+    public bool HasClients() { return _numClients > 0; }
+
     public void AddClient()
     {
         _numClients++;
