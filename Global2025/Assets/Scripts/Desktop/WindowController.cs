@@ -1,3 +1,4 @@
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,6 +33,11 @@ public class WindowController : MonoBehaviour
     [SerializeField]
     private float _maxScale = 1.5f, _minScale = 0.67f, _scaleFactor = 0.001f;
     private float _barHalfHeight, _cornerHalfSize;
+
+    [SerializeField]
+    private StudioEventEmitter _musicEmitter = null;
+
+    public int trackEvent = 1;
     private void Awake()
     {
         _windowManager = GetComponentInParent<WindowManager>();
@@ -52,7 +58,9 @@ public class WindowController : MonoBehaviour
     {
         _windowManager.AddController(this);
         InstantiateNextScene(true);
+        _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 1);
     }
+
 
     private void Update()
     {
@@ -130,6 +138,7 @@ public class WindowController : MonoBehaviour
         _isDragging = false;
         _windowManager.RemoveController(this);
         if (_gameManager) Destroy(_gameManager.gameObject);
+        _musicEmitter?.SetParameter("Track" + trackEvent.ToString(), 0);
     }
 
     public void SetOrder(int order, bool hasFocus)
