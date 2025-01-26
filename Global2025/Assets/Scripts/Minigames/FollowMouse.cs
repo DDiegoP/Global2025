@@ -31,9 +31,11 @@ public class FollowMouse : GameComponent
 
 
     private StudioEventEmitter _emitter = null;
+    private InputManager _input;
 
     void Start()
     {
+        _input = transform.root.GetComponent<InputManager>();
         _rectTransform = GetComponent<RectTransform>();
         _transform = this.transform;
         brillitos.SetActive(false);
@@ -42,7 +44,7 @@ public class FollowMouse : GameComponent
 
     void Update()
     {
-        Vector3 pos = new Vector3(Mouse.current.position.x.value, Mouse.current.position.y.value, transform.position.z);
+        Vector3 pos = new Vector3(_input.GetPointerPosition().x, _input.GetPointerPosition().y, transform.position.z);
         transform.SetPositionAndRotation(pos, Quaternion.identity);
 
         elapsedTime += Time.deltaTime;
@@ -58,7 +60,7 @@ public class FollowMouse : GameComponent
             }
         }
 
-        if (Mouse.current.leftButton.isPressed)
+        if (_input.GetPressed())
         {
 
             RaycastHit2D[] hits = new RaycastHit2D[10];

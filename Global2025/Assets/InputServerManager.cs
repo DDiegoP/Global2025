@@ -86,8 +86,8 @@ public class InputServerManager : MonoBehaviour
 
     public void UpdatePressingScreen(bool pressing)
     {
-        _inputData.justReleased = pressing && !_inputData.clicked;
-        _inputData.justClicked = !pressing && _inputData.clicked;
+        _inputData.justReleased = !pressing && _inputData.clicked;
+        _inputData.justClicked = pressing && !_inputData.clicked;
         _inputData.clicked = pressing;
     }
 

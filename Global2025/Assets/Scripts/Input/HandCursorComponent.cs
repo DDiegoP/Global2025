@@ -25,7 +25,7 @@ public class HandCursorComponent : GameComponent
     // Update is called once per frame
     void Update()
     {
-        transform.position = _input.GetPointerPosition();
+        _input.UpdatePos(transform);
         if (_currentBubble != null && _input.GetPop())
         {
             _currentBubble.Pop();

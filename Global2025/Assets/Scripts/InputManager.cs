@@ -24,6 +24,12 @@ public class InputManager : MonoBehaviour
         else return Mouse.current.position.ReadValue();
     }
 
+    public void UpdatePos(Transform tr)
+    {
+        if (_mobileInput) tr.localPosition = new Vector2(_data.mouse_pos.x * _minigameSize.x, _data.mouse_pos.y * _minigameSize.y);
+        else tr.position = Mouse.current.position.ReadValue();
+    }
+
     public bool GetShake() 
     {
         if (_mobileInput) return false;
@@ -36,10 +42,15 @@ public class InputManager : MonoBehaviour
         else return Mouse.current.leftButton.wasPressedThisFrame;
     }
 
+    public bool GetPressed()
+    {
+        if (_mobileInput) return _data.clicked;
+        else return Mouse.current.leftButton.isPressed;
+    }
+
     public bool GetRelease()
     {
         if (_mobileInput) return _data.justReleased;
         else return Mouse.current.leftButton.wasReleasedThisFrame;
     }
-
 }
