@@ -12,6 +12,7 @@ public class InputServerManager : MonoBehaviour
         if (_instance == null)
         {
             _instance = this;
+            DontDestroyOnLoad(gameObject.transform.root);
         }
         else Destroy(this.gameObject);
     }
@@ -92,9 +93,9 @@ public class InputServerManager : MonoBehaviour
         _inputData.clicked = pressing;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        Debug.Log("OWO: "+ _inputData.justClicked);
+        Debug.LogError("OWO: "+ _inputData.justClicked);
 
         _inputData.justReleased = false;
         _inputData.justClicked = false;
