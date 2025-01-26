@@ -23,6 +23,9 @@ public class TimerComponent : GameComponent {
     [SerializeField]
     private TextMeshProUGUI _text;
 
+    [SerializeField]
+    private bool _setScoreAsTimer = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,6 +55,7 @@ public class TimerComponent : GameComponent {
     public void StopRunning()
     {
         _finished = true;
+        if (_setScoreAsTimer) _manager.score = (int)_elapsedTime;
         _elapsedTime = _startTime;
     }
 

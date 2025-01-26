@@ -1127,6 +1127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isGame: 1
   _background: {fileID: 6941171629038978634}
+  score: 0
+  _scoreName: SodaHighScore
 --- !u!114 &4350051283535201575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,6 +1186,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _text: {fileID: 8220155133518584481}
+  _setScoreAsTimer: 0
 --- !u!114 &4150117928757300404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1208,33 @@ MonoBehaviour:
   totalTime: 2
   intensityIncrease: 0.1
   bubbleAnimationTime: 3
+  _end:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242597804069289897}
+        m_TargetAssemblyTypeName: FadeOut, Assembly-CSharp
+        m_MethodName: StartFadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8261241292301511998}
+        m_TargetAssemblyTypeName: ScoreComponent, Assembly-CSharp
+        m_MethodName: SetScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8261241292301511998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1432,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 639331bfa1418e94385804088b2b1237, type: 3}
+--- !u!114 &1242597804069289897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6920073464260418022, guid: 639331bfa1418e94385804088b2b1237, type: 3}
+  m_PrefabInstance: {fileID: 8158150020678526543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2556f8ce02a645f45a95cb9ec3fbd199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6020078018605800992 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2502892224992344175, guid: 639331bfa1418e94385804088b2b1237, type: 3}
