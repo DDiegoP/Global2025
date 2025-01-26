@@ -1,6 +1,7 @@
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class BalloonComponent : GameComponent
 {
@@ -9,6 +10,11 @@ public class BalloonComponent : GameComponent
     private RectTransform _buble;
     private ScoreComponent _scoreComponent;
     private StudioEventEmitter _emitter;
+    private Animator _animator;
+    [SerializeField]
+    private Slider _slider;
+    [SerializeField]
+    private GameObject _bubbleFloat;
 
 
     [SerializeField]
@@ -17,8 +23,8 @@ public class BalloonComponent : GameComponent
     private void Pop()
     {
         _blowing = false;
+        _animator.Play("BubblePop");
         //animacion explota burbuja
-        ResetBubble();
         // Sonido de explosion
         //_emitter.Play();
     }
@@ -32,6 +38,12 @@ public class BalloonComponent : GameComponent
     {
         _buble.localScale = new Vector3(1,1,1);
         _buble.localPosition = new Vector3(_buble.localPosition.x, 46.5f * _buble.localScale.x - 174.5f, _buble.localPosition.z);
+        _slider.value = _slider.minValue;
+    }
+
+    private void SuccesfulBubble()
+    {
+        Instantiate(_bubbleFloat, transform.parent);
     }
 
     private void Start()
@@ -39,6 +51,7 @@ public class BalloonComponent : GameComponent
        _scoreComponent = GetComponentInParent<ScoreComponent>();
        //_emitter = GetComponent<StudioEventEmitter>();
        _buble = GetComponentInParent<RectTransform>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,17 +61,19 @@ public class BalloonComponent : GameComponent
         {
             _blowing = true;
         }
-        else if (Mouse.current.leftButton.wasReleasedThisFrame)
+        else if (_blowing && Mouse.current.leftButton.wasReleasedThisFrame)
         {
             _blowing = false;
             ApplyScore();
             //Animacion de que suba la burbuja
-            Pop();
+            SuccesfulBubble();
+            ResetBubble();
         }
         if (_blowing)
         {
             _buble.localScale *= (1 + _scaleFactor * Time.deltaTime);
             _buble.localPosition = new Vector3(_buble.localPosition.x, 46.5f * _buble.localScale.x - 174.5f, _buble.localPosition.z);
+            _slider.value = _buble.localScale.x;
             if (_buble.localScale.x > _maxScale)
                 Pop();
         }

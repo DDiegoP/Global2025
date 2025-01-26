@@ -1,0 +1,18 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class SliderGradient : MonoBehaviour
+{
+    [SerializeField] private Gradient _gradient = null;
+    private Image _image = null;
+
+    private void Awake()
+    {
+        _image = GetComponent<Image>();
+    }
+
+    private void Update()
+    {
+        _image.color = _gradient.Evaluate(_image.fillAmount);
+    }
+}
