@@ -17,15 +17,24 @@ public class WindowController : MonoBehaviour
 
     [SerializeField]
     private RectTransform _rectTransformBar, _leftCorner, _rightCorner;
+
     [SerializeField]
+    private GameObject _gameToInstantiate;
+
+    [SerializeField]
+    private GameObject _endMenu;
+
+    [SerializeField]
+    private Color _color;
+
     private MinigameManager _gameManager;
+
     [SerializeField]
     private float _maxScale = 1.5f, _minScale = 0.67f, _scaleFactor = 0.001f;
     private float _barHalfHeight, _cornerHalfSize;
     private void Awake()
     {
         _windowManager = GetComponentInParent<WindowManager>();
-        if(!_gameManager) _gameManager = GetComponentInChildren<MinigameManager>();
         _canvas = GetComponent<Canvas>();
         _rectTransform = GetComponent<RectTransform>();
     }
@@ -36,11 +45,13 @@ public class WindowController : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider2D>();
         _barHalfHeight = _rectTransformBar.sizeDelta.y / 2;
         _cornerHalfSize = _leftCorner.sizeDelta.y / 2;
+        InstantiateNextScene(true);
     }
 
     private void OnEnable()
     {
         _windowManager.AddController(this);
+        InstantiateNextScene(true);
     }
 
     private void Update()
@@ -118,12 +129,28 @@ public class WindowController : MonoBehaviour
     {
         _isDragging = false;
         _windowManager.RemoveController(this);
+        if (_gameManager) Destroy(_gameManager.gameObject);
     }
 
     public void SetOrder(int order, bool hasFocus)
     {
         _canvas.sortingOrder = order;
         _rectTransform.position = new Vector3(_rectTransform.position.x, _rectTransform.position.y, -order);
-        _gameManager.enabled = hasFocus;
+        if(_gameManager) _gameManager.enabled = hasFocus;
+    }
+
+    public void InstantiateNextScene(bool isMinigame)
+    {
+        if (_gameManager) Destroy(_gameManager.gameObject);
+        GameObject instance = Instantiate(isMinigame ? _gameToInstantiate : _endMenu, GetComponent<RectTransform>());
+        RectTransform rectTransform = instance.GetComponent<RectTransform>();
+        _gameManager = instance.GetComponent<MinigameManager>();
+        _gameManager.SetColor(_color);
+        //rectTransform.anchoredPosition = new Vector3(0, -13.75f, 5);
+        //rectTransform.sizeDelta = new Vector2(958, 539);
+        //rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        //rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        //rectTransform.pivot = new Vector2(0.5f, 0.5f);
+        //rectTransform.localScale = new Vector3(1, 1, 1);
     }
 }
