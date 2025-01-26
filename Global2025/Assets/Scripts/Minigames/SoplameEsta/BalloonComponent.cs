@@ -15,6 +15,8 @@ public class BalloonComponent : GameComponent
     private Slider _slider;
     [SerializeField]
     private GameObject _bubbleFloat;
+    [SerializeField]
+    private GameObject _bubbleSpawner;
 
 
     [SerializeField]
@@ -41,7 +43,11 @@ public class BalloonComponent : GameComponent
 
     private void SuccesfulBubble()
     {
-        Instantiate(_bubbleFloat, transform.parent);
+        GameObject bubble = Instantiate(_bubbleFloat, _bubbleSpawner.transform);
+        bubble.transform.localPosition = transform.localPosition;
+        bubble.transform.localScale = transform.localScale;
+        bubble.GetComponent<BubbleAnimation>().SetMinigameManager(_manager);
+        bubble.GetComponent<BubbleAnimation>().randomScale = false;
     }
 
     InputManager _input;

@@ -89,9 +89,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _manager: {fileID: 0}
-  floatSpeed: 100
+  floatSpeed: 150
   sideSpeed: 5
   sideRange: 50
+  randomScale: 1
   lifetime: 5
   shrinkDuration: 2
   minScaleFactor: 0.5
