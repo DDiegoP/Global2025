@@ -453,7 +453,7 @@ MonoBehaviour:
   _rectTransformBar: {fileID: 8212034079349642357}
   _leftCorner: {fileID: 2314541292424856860}
   _rightCorner: {fileID: 3006787585573874862}
-  _gameToInstantiate: {fileID: 8801529245637289891, guid: e731936df89e4a74ea70114cf7c24254, type: 3}
+  _gameToInstantiate: {fileID: 8801529245637289891, guid: aa2d787fdbc16c64cbaf85bdf51fcbb8, type: 3}
   _endMenu: {fileID: 8801529245637289891, guid: 2b7b6905615cb324aaffd740beda23e5, type: 3}
   _color: {r: 1, g: 0.779937, b: 0.3607843, a: 0}
   _maxScale: 1.5
