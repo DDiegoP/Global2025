@@ -20,13 +20,13 @@ public class InputManager : MonoBehaviour
 
     public Vector2 GetPointerPosition() 
     {
-        if(_mobileInput) return new Vector2(_data.mouse_pos.x * _minigameSize.x, _data.mouse_pos.y * _minigameSize.y);
+        if(_mobileInput) return new Vector2(_data.mouse_pos_x * _minigameSize.x, _data.mouse_pos_y * _minigameSize.y);
         else return Mouse.current.position.ReadValue();
     }
 
     public void UpdatePos(Transform tr)
     {
-        if (_mobileInput) tr.localPosition = new Vector2(_data.mouse_pos.x * _minigameSize.x, _data.mouse_pos.y * _minigameSize.y);
+        if (_mobileInput) tr.localPosition = new Vector2(_data.mouse_pos_x * _minigameSize.x, _data.mouse_pos_y * _minigameSize.y);
         else tr.position = Mouse.current.position.ReadValue();
     }
 
