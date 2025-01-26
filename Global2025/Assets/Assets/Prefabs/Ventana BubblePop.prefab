@@ -333,6 +333,7 @@ MonoBehaviour:
   _rightCorner: {fileID: 8525130740132155891}
   _gameToInstantiate: {fileID: 8801529245637289891, guid: 4eef71520caeada4c9b5f6e9c9fe33c3, type: 3}
   _endMenu: {fileID: 8801529245637289891, guid: 2b7b6905615cb324aaffd740beda23e5, type: 3}
+  _color: {r: 0.27358478, g: 0.68101823, b: 1, a: 0}
   _maxScale: 1.5
   _minScale: 0.67
   _scaleFactor: 0.001

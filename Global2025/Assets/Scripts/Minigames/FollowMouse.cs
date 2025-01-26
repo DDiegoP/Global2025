@@ -16,6 +16,8 @@ public class FollowMouse : GameComponent
     [SerializeField]
     private float instanceTime = 50f;
 
+    private bool startFinishAnim = false;
+    private float animTime = 5f;
 
     [SerializeField]
     private GameObject[] soap;
@@ -31,6 +33,7 @@ public class FollowMouse : GameComponent
         _rectTransform = GetComponent<RectTransform>();
         _transform = this.transform;
         brillitos.SetActive(false);
+        elapsedTime = 0;
     }
 
     void Update()
@@ -38,21 +41,36 @@ public class FollowMouse : GameComponent
         Vector3 pos = new Vector3(Mouse.current.position.x.value, Mouse.current.position.y.value, transform.position.z);
         transform.SetPositionAndRotation(pos, Quaternion.identity);
 
-        RaycastHit2D[] hits = new RaycastHit2D[10];
-        Physics2D.Raycast(new Vector3(_rectTransform.position.x, _rectTransform.position.y, -10), Camera.main.transform.forward, new ContactFilter2D(), hits);
-        RaycastHit2D hit = new RaycastHit2D();
-        for (int i = 0; i < 10; ++i)
+        elapsedTime += Time.deltaTime;
+
+
+        if (startFinishAnim)
         {
-            if (hits[i].collider != null && hits[i].collider.gameObject.GetComponent<CleanComponent>())
+            if (elapsedTime >= animTime)
             {
-                hit = hits[i];
-                break;
+                this.gameObject.GetComponentInParent<TimerComponent>().StopTimer();
+                elapsedTime = 0;
+                startFinishAnim = false;
             }
-            else if (i == 9) return;
         }
 
         if (Mouse.current.leftButton.isPressed)
         {
+
+            RaycastHit2D[] hits = new RaycastHit2D[10];
+            Physics2D.Raycast(new Vector3(_rectTransform.position.x, _rectTransform.position.y, -10), Camera.main.transform.forward, new ContactFilter2D(), hits);
+            RaycastHit2D hit = new RaycastHit2D();
+            for (int i = 0; i < 10; ++i)
+            {
+                if (hits[i].collider != null && hits[i].collider.gameObject.GetComponent<CleanComponent>())
+                {
+                    hit = hits[i];
+                    break;
+                }
+                else if (i == 9) return;
+            }
+
+
             Image img = hit.collider.gameObject.GetComponent<Image>();
             RectTransform rectTransform = hit.collider.gameObject.GetComponent<RectTransform>();
             Vector2 halfBallonSize = new Vector2(rectTransform.sizeDelta.x, rectTransform.sizeDelta.y) / 2;
@@ -78,19 +96,21 @@ public class FollowMouse : GameComponent
 
             CleanComponent comp = hit.collider.gameObject.GetComponent<CleanComponent>();
             comp?.CleanRectangle(relativeLeftBottomPosition, relativeRightTopPosition);
-           
 
-            elapsedTime += Time.deltaTime;
-
-            if (elapsedTime >= instanceTime)
+            if (elapsedTime >= instanceTime && !startFinishAnim)
             {
                 int dirty = comp.checkDirtyNess();
                 if (dirty <= 30) showSoap(0);
                 else if (dirty <= 60) showSoap(1);
-                else if (dirty <= 80) showSoap(2);
-                else brillitos.SetActive(true);
-                elapsedTime = 0;
-                
+                else if (dirty <= 85) showSoap(2);
+                else
+                {
+                    brillitos.SetActive(true);
+                    startFinishAnim = true;
+                    this.gameObject.GetComponentInParent<TimerComponent>().StopRunning();
+                    elapsedTime = 0;
+                }
+               
             }
 
         }
