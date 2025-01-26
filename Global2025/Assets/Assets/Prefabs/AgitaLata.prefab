@@ -1208,6 +1208,10 @@ PrefabInstance:
       value: Fade
       objectReference: {fileID: 0}
     - target: {fileID: 6920073464260418022, guid: 639331bfa1418e94385804088b2b1237, type: 3}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 4576259326335448051}
+    - target: {fileID: 6920073464260418022, guid: 639331bfa1418e94385804088b2b1237, type: 3}
       propertyPath: afterFadeOut.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
